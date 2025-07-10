@@ -16,6 +16,7 @@ const translations = {
         'nav_home': 'Home',
         'nav_minecraft': 'Minecraft',
         'nav_sims4': 'Sims 4',
+        'nav_profile': 'Profile',
         'language_selector': 'Language',
         
         // Index page
@@ -59,6 +60,7 @@ const translations = {
         'nav_home': 'Inicio',
         'nav_minecraft': 'Minecraft',
         'nav_sims4': 'Sims 4',
+        'nav_profile': 'Perfil',
         'language_selector': 'Idioma',
         
         // Index page
@@ -188,6 +190,61 @@ const translations = {
             setCookie('language', langCode, 30); // Save for 30 days
             applyTranslations();
             updateLanguageSelector();
+            
+            // Actualizar contenido de los mods sin recargar la página
+            updateModContent();
+        }
+    }
+    
+    // Función para actualizar el contenido de los mods
+    function updateModContent() {
+        // Actualizar tarjetas de mods en las páginas de juegos
+        const path = window.location.pathname;
+        
+        // Actualizar página de Minecraft
+        if (path.includes('minecraft.html')) {
+            const searchInput = document.getElementById('mod-search');
+            if (searchInput && searchInput.value.trim() === '') {
+                const minecraftModsContainer = document.getElementById('minecraft-mods');
+                if (minecraftModsContainer) {
+                    minecraftModsContainer.innerHTML = '';
+                    if (window.modsData && window.modsData.minecraft) {
+                        window.modsData.minecraft.forEach(mod => {
+                            minecraftModsContainer.appendChild(window.createModCard(mod));
+                        });
+                    }
+                }
+            }
+        }
+        
+        // Actualizar página de Sims 4
+        if (path.includes('sims4.html')) {
+            const searchInput = document.getElementById('mod-search');
+            if (searchInput && searchInput.value.trim() === '') {
+                const sims4ModsContainer = document.getElementById('sims4-mods');
+                if (sims4ModsContainer) {
+                    sims4ModsContainer.innerHTML = '';
+                    if (window.modsData && window.modsData.sims4) {
+                        window.modsData.sims4.forEach(mod => {
+                            sims4ModsContainer.appendChild(window.createModCard(mod));
+                        });
+                    }
+                }
+            }
+        }
+        
+        // Actualizar página de detalles del mod
+        if (path.includes('/mod/')) {
+            const urlParams = new URLSearchParams(window.location.search);
+            const modId = urlParams.get('id');
+            const gameType = urlParams.get('game');
+            
+            if (modId && gameType && window.modsData && window.modsData[gameType]) {
+                const mod = window.modsData[gameType].find(m => m.id === modId);
+                if (mod && window.renderModDetails) {
+                    window.renderModDetails(mod);
+                }
+            }
         }
     }
     
@@ -220,10 +277,11 @@ const translations = {
         
         // Navigation
         const navLinks = document.querySelectorAll('nav ul li a');
-        if (navLinks.length >= 3) {
+        if (navLinks.length >= 4) {
             navLinks[0].textContent = lang.nav_home;
             navLinks[1].textContent = lang.nav_minecraft;
             navLinks[2].textContent = lang.nav_sims4;
+            navLinks[3].textContent = lang.nav_profile;
         }
         
         // Page specific translations

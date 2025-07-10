@@ -4,8 +4,21 @@ document.addEventListener('DOMContentLoaded', function() {
     const minecraftModsContainer = document.getElementById('minecraft-mods');
     const sims4ModsContainer = document.getElementById('sims4-mods');
     
-    // Función para crear tarjetas de mods
-    function createModCard(mod) {
+    // Obtener el idioma actual
+    function getCurrentLanguage() {
+        return getCookie('language') || 'en';
+    }
+    
+    // Función para obtener cookie
+    function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+        return null;
+    }
+    
+    // Función para crear tarjetas de mods (expuesta globalmente)
+    window.createModCard = function(mod) {
         const modCard = document.createElement('a');
         modCard.href = `mod/index.html?id=${mod.id}&game=${mod.game}`;
         modCard.className = 'mod-card';
@@ -13,21 +26,34 @@ document.addEventListener('DOMContentLoaded', function() {
         // Usar una imagen de placeholder si no hay imagen principal
         const imageUrl = mod.mainImage || `../img/${mod.game}/placeholder.svg`;
         
+        // Obtener el idioma actual
+        const currentLang = getCurrentLanguage();
+        
+        // Obtener la descripción corta en el idioma actual o usar el primer idioma disponible
+        const shortDesc = mod.shortDescription[currentLang] || mod.shortDescription[Object.keys(mod.shortDescription)[0]];
+        
+        // Texto del botón según el idioma
+        const buttonText = currentLang === 'es' ? 'Ver detalles' : 'View details';
+        const authorPrefix = currentLang === 'es' ? 'Por ' : 'By ';
+        
         modCard.innerHTML = `
             <div class="mod-image" style="background-image: url('${imageUrl}');"></div>
             <div class="mod-info">
                 <h3>${mod.name}</h3>
-                <p>${mod.shortDescription}</p>
+                <p>${shortDesc}</p>
                 <div class="mod-meta">
-                    <span>Por ${mod.author}</span>
+                    <span>${authorPrefix}${mod.author}</span>
                     <span>${mod.versions ? mod.versions.join(', ') : 'N/A'}</span>
                 </div>
-                <span class="mod-button">Ver detalles</span>
+                <span class="mod-button">${buttonText}</span>
             </div>
         `;
         
         return modCard;
-    }
+    };
+    
+    // Alias local para la función global
+    const createModCard = window.createModCard;
     
     // Cargar mods de Minecraft
     if (minecraftModsContainer) {
@@ -59,16 +85,22 @@ document.addEventListener('DOMContentLoaded', function() {
             function performSearch() {
                 const searchTerm = searchInput.value.toLowerCase();
                 const modsContainer = document.getElementById(`${gameType}-mods`);
+                const currentLang = getCurrentLanguage();
                 
                 // Limpiar contenedor
                 modsContainer.innerHTML = '';
                 
                 // Filtrar mods
-                const filteredMods = modsData[gameType].filter(mod => 
-                    mod.name.toLowerCase().includes(searchTerm) || 
-                    mod.description.toLowerCase().includes(searchTerm) ||
-                    mod.author.toLowerCase().includes(searchTerm)
-                );
+                const filteredMods = modsData[gameType].filter(mod => {
+                    // Obtener la descripción en el idioma actual o usar el primer idioma disponible
+                    const description = mod.description[currentLang] || mod.description[Object.keys(mod.description)[0]];
+                    const shortDesc = mod.shortDescription[currentLang] || mod.shortDescription[Object.keys(mod.shortDescription)[0]];
+                    
+                    return mod.name.toLowerCase().includes(searchTerm) || 
+                           description.toLowerCase().includes(searchTerm) ||
+                           shortDesc.toLowerCase().includes(searchTerm) ||
+                           mod.author.toLowerCase().includes(searchTerm);
+                });
                 
                 // Mostrar resultados
                 if (filteredMods.length > 0) {
@@ -76,7 +108,11 @@ document.addEventListener('DOMContentLoaded', function() {
                         modsContainer.appendChild(createModCard(mod));
                     });
                 } else {
-                    modsContainer.innerHTML = '<p class="no-results">No se encontraron mods que coincidan con tu búsqueda.</p>';
+                    // Mensaje según el idioma
+                    const noResultsMessage = currentLang === 'es' 
+                        ? 'No se encontraron mods que coincidan con tu búsqueda.' 
+                        : 'No mods found matching your search.';
+                    modsContainer.innerHTML = `<p class="no-results">${noResultsMessage}</p>`;
                 }
             }
             

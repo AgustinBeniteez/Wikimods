@@ -98,6 +98,28 @@ nav a .fa-curseforge {
     color: #f16436;
 }
 
+/* Botón de repositorio */
+.repository-button {
+    display: inline-flex;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 1rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.repository-button:hover {
+    background-color: #444;
+    transform: translateY(-2px);
+}
+
+.repository-button i {
+    margin-right: 0.5rem;
+}
+
 nav a:hover .fa-curseforge {
     transform: scale(1.1);
 }
@@ -454,6 +476,177 @@ nav a.active::after {
     transform: scale(1.05);
 }
 
+/* Estilos para la sección de ítems del mod */
+.mod-items {
+    margin-bottom: 2rem;
+}
+
+.mod-items h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+}
+
+.items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.item-card {
+    background-color: var(--dark-surface-2);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transition: var(--transition);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.item-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.item-header {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--dark-surface-3);
+}
+
+.item-image {
+    width: 50px;
+    height: 50px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-right: 1rem;
+    border-radius: var(--border-radius);
+}
+
+.item-header h4 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.item-description {
+    padding: 1rem;
+    border-bottom: 1px solid var(--dark-surface-3);
+}
+
+.item-recipe {
+    padding: 1rem;
+}
+
+.item-recipe h5 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: var(--accent-color);
+}
+
+.recipe-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.recipe-grid {
+    display: flex;
+    flex-direction: column;
+}
+
+.recipe-row {
+    display: flex;
+}
+
+.recipe-cell {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--dark-surface);
+    border: 1px solid var(--dark-surface-3);
+    margin: 2px;
+    font-weight: bold;
+    border-radius: 4px;
+    overflow: hidden;
+    padding: 2px;
+}
+
+.ingredient-image {
+    width: 100%;
+    height: 100%;
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    image-rendering: pixelated;
+}
+
+.recipe-cell.empty {
+    background-color: transparent;
+    border: 1px dashed var(--dark-surface-3);
+}
+
+.recipe-arrow {
+    margin: 0 1rem;
+    font-size: 1.5rem;
+    color: var(--accent-color);
+}
+
+.recipe-result {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.result-item {
+    padding: 0.5rem;
+    background-color: var(--dark-surface);
+    border: 1px solid var(--accent-color);
+    border-radius: var(--border-radius);
+    text-align: center;
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.result-quantity {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-size: 0.8rem;
+    padding: 1px 3px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.recipe-key {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+.recipe-key h6 {
+    margin: 0.5rem 0;
+    color: var(--accent-color);
+}
+
+.recipe-key ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0.5rem 0;
+}
+
+.recipe-key li {
+    margin-bottom: 0.25rem;
+}
+
 .mod-download {
     background-color: var(--dark-surface-2);
     padding: 1.5rem;
@@ -522,6 +715,21 @@ footer p {
 
     .mod-header-overlay h2 {
         font-size: 1.5rem;
+    }
+    
+    .items-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .recipe-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .recipe-arrow {
+        transform: rotate(90deg);
+        margin: 0.5rem 0;
     }
 
     .mod-download {
