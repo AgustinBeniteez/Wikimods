@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#1e1e1e"/>
+  
+  <!-- Fondo de pantalla de Sims 4 -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a3d62;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#3c6382;stop-opacity:0.8" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bgGradient)"/>
+  
+  <!-- Interfaz de MCCC - Menú principal -->
+  <g>
+    <!-- Ventana de diálogo -->
+    <rect x="150" y="100" width="500" height="400" rx="10" ry="10" fill="#222222" stroke="#82ccdd" stroke-width="3"/>
+    
+    <!-- Barra de título -->
+    <rect x="150" y="100" width="500" height="40" rx="10" ry="10" fill="#0a3d62" stroke="#82ccdd" stroke-width="3"/>
+    <text x="400" y="127" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#ffffff">MC Command Center 7.5.0</text>
+    
+    <!-- Botón de cerrar -->
+    <circle cx="630" cy="120" r="12" fill="#e74c3c"/>
+    <g stroke="#ffffff" stroke-width="2">
+      <line x1="625" y1="115" x2="635" y2="125"/>
+      <line x1="625" y1="125" x2="635" y2="115"/>
+    </g>
+    
+    <!-- Contenido del menú -->
+    <g font-family="Arial, sans-serif" fill="#ffffff">
+      <!-- Título de sección -->
+      <text x="400" y="170" font-size="20" text-anchor="middle" font-weight="bold">Menú Principal</text>
+      
+      <!-- Opciones de menú -->
+      <g>
+        <!-- Opción 1 -->
+        <rect x="200" y="190" width="400" height="30" rx="5" ry="5" fill="#3c6382" stroke="#82ccdd" stroke-width="1"/>
+        <text x="220" y="212" font-size="16">MC Pregnancy</text>
+        <text x="580" y="212" font-size="16" text-anchor="end">></text>
+        
+        <!-- Opción 2 -->
+        <rect x="200" y="230" width="400" height="30" rx="5" ry="5" fill="#3c6382" stroke="#82ccdd" stroke-width="1"/>
+        <text x="220" y="252" font-size="16">MC Population</text>
+        <text x="580" y="252" font-size="16" text-anchor="end">></text>
+        
+        <!-- Opción 3 -->
+        <rect x="200" y="270" width="400" height="30" rx="5" ry="5" fill="#3c6382" stroke="#82ccdd" stroke-width="1"/>
+        <text x="220" y="292" font-size="16">MC Cleaner</text>
+        <text x="580" y="292" font-size="16" text-anchor="end">></text>
+        
+        <!-- Opción 4 -->
+        <rect x="200" y="310" width="400" height="30" rx="5" ry="5" fill="#3c6382" stroke="#82ccdd" stroke-width="1"/>
+        <text x="220" y="332" font-size="16">MC WooHoo</text>
+        <text x="580" y="332" font-size="16" text-anchor="end">></text>
+        
+        <!-- Opción 5 -->
+        <rect x="200" y="350" width="400" height="30" rx="5" ry="5" fill="#3c6382" stroke="#82ccdd" stroke-width="1"/>
+        <text x="220" y="372" font-size="16">MC Careers</text>
+        <text x="580" y="372" font-size="16" text-anchor="end">></text>
+        
+        <!-- Opción 6 -->
+        <rect x="200" y="390" width="400" height="30" rx="5" ry="5" fill="#3c6382" stroke="#82ccdd" stroke-width="1"/>
+        <text x="220" y="412" font-size="16">MC Money</text>
+        <text x="580" y="412" font-size="16" text-anchor="end">></text>
+        
+        <!-- Opción 7 -->
+        <rect x="200" y="430" width="400" height="30" rx="5" ry="5" fill="#3c6382" stroke="#82ccdd" stroke-width="1"/>
+        <text x="220" y="452" font-size="16">MC Settings</text>
+        <text x="580" y="452" font-size="16" text-anchor="end">></text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Elementos de la interfaz de Sims 4 (simulados) -->
+  <g opacity="0.5">
+    <!-- Barra superior -->
+    <rect x="0" y="0" width="800" height="30" fill="#0a3d62"/>
+    
+    <!-- Iconos de control de juego -->
+    <g fill="#ffffff">
+      <circle cx="30" cy="15" r="8"/>
+      <circle cx="60" cy="15" r="8"/>
+      <circle cx="90" cy="15" r="8"/>
+      <rect x="700" y="7" width="16" height="16" rx="2" ry="2"/>
+      <rect x="730" y="7" width="16" height="16" rx="2" ry="2"/>
+      <rect x="760" y="7" width="16" height="16" rx="2" ry="2"/>
+    </g>
+  </g>
+  
+  <!-- Personaje Sim difuminado en el fondo -->
+  <g opacity="0.2">
+    <!-- Silueta de Sim -->
+    <path d="M100,500 C100,400 150,350 200,300 C250,250 300,200 400,200 C500,200 550,250 600,300 C650,350 700,400 700,500 Z" fill="#ffffff"/>
+    <circle cx="400" cy="150" r="50" fill="#ffffff"/>
+  </g>
+  
+  <!-- Información adicional -->
+  <g font-family="Arial, sans-serif" fill="#ffffff">
+    <text x="400" y="530" font-size="16" text-anchor="middle">Accede a todas las funciones desde el menú principal</text>
+    <text x="400" y="560" font-size="14" text-anchor="middle">Personaliza tu experiencia de juego con MC Command Center</text>
+  </g>
+  
+  <!-- Indicador de mod activo -->
+  <g>
+    <circle cx="50" cy="550" r="10" fill="#2ecc71"/>
+    <text x="70" y="555" font-family="Arial, sans-serif" font-size="14" fill="#ffffff">Mod activo</text>
+  </g>
+</svg>

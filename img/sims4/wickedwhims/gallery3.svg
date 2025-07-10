@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#1e1e1e"/>
+  
+  <!-- Fondo de pantalla de Sims 4 -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6a0572;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#ab83a1;stop-opacity:0.8" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bgGradient)"/>
+  
+  <!-- Interfaz de Wicked Whims - Sistema de Ciclo Menstrual -->
+  <g>
+    <!-- Ventana de diálogo -->
+    <rect x="150" y="100" width="500" height="400" rx="10" ry="10" fill="#222222" stroke="#e056fd" stroke-width="3"/>
+    
+    <!-- Barra de título -->
+    <rect x="150" y="100" width="500" height="40" rx="10" ry="10" fill="#6a0572" stroke="#e056fd" stroke-width="3"/>
+    <text x="400" y="127" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#ffffff">Wicked Whims - Ciclo Menstrual</text>
+    
+    <!-- Botón de cerrar y volver -->
+    <circle cx="630" cy="120" r="12" fill="#e74c3c"/>
+    <g stroke="#ffffff" stroke-width="2">
+      <line x1="625" y1="115" x2="635" y2="125"/>
+      <line x1="625" y1="125" x2="635" y2="115"/>
+    </g>
+    <rect x="170" y="110" width="20" height="20" rx="3" ry="3" fill="#ab83a1"/>
+    <g stroke="#ffffff" stroke-width="2">
+      <line x1="175" y1="120" x2="185" y2="120"/>
+      <line x1="175" y1="120" x2="180" y2="115"/>
+      <line x1="175" y1="120" x2="180" y2="125"/>
+    </g>
+    
+    <!-- Contenido del menú -->
+    <g font-family="Arial, sans-serif" fill="#ffffff">
+      <!-- Título de sección -->
+      <text x="400" y="170" font-size="20" text-anchor="middle" font-weight="bold">Estado del Ciclo</text>
+      
+      <!-- Sim seleccionado -->
+      <rect x="200" y="190" width="400" height="30" rx="5" ry="5" fill="#333333" stroke="#e056fd" stroke-width="1"/>
+      <text x="220" y="212" font-size="16">Sim seleccionado:</text>
+      <text x="580" y="212" font-size="16" text-anchor="end">Bella Goth</text>
+      
+      <!-- Estado actual -->
+      <rect x="200" y="230" width="400" height="40" rx="5" ry="5" fill="#333333" stroke="#e056fd" stroke-width="1"/>
+      <text x="220" y="252" font-size="16">Estado actual:</text>
+      <text x="580" y="252" font-size="16" text-anchor="end" fill="#e056fd">Fase folicular</text>
+      <text x="400" y="272" font-size="14" text-anchor="middle">Día 8 de 28</text>
+      
+      <!-- Visualización del ciclo -->
+      <g>
+        <rect x="200" y="280" width="400" height="30" rx="5" ry="5" fill="#333333" stroke="#e056fd" stroke-width="1"/>
+        
+        <!-- Fases del ciclo (visualización) -->
+        <rect x="200" y="280" width="100" height="30" rx="5" ry="5" fill="#ab83a1" stroke="#e056fd" stroke-width="1"/>
+        <rect x="300" y="280" width="50" height="30" fill="#e056fd" stroke="#e056fd" stroke-width="1"/>
+        <rect x="350" y="280" width="150" height="30" fill="#6a0572" stroke="#e056fd" stroke-width="1"/>
+        <rect x="500" y="280" width="100" height="30" rx="0" ry="5" fill="#ab83a1" stroke="#e056fd" stroke-width="1"/>
+        
+        <!-- Marcador de día actual -->
+        <circle cx="320" cy="295" r="10" fill="#ffffff" stroke="#e056fd" stroke-width="2"/>
+      </g>
+      
+      <!-- Leyenda de fases -->
+      <g>
+        <text x="220" y="330" font-size="16" font-weight="bold">Fases del ciclo:</text>
+        
+        <rect x="220" y="340" width="15" height="15" fill="#ab83a1"/>
+        <text x="245" y="353" font-size="14">Fase folicular (Días 1-10)</text>
+        
+        <rect x="220" y="365" width="15" height="15" fill="#e056fd"/>
+        <text x="245" y="378" font-size="14">Ovulación (Días 11-14)</text>
+        
+        <rect x="220" y="390" width="15" height="15" fill="#6a0572"/>
+        <text x="245" y="403" font-size="14">Fase lútea (Días 15-26)</text>
+        
+        <rect x="220" y="415" width="15" height="15" fill="#ab83a1"/>
+        <text x="245" y="428" font-size="14">Menstruación (Días 27-28)</text>
+      </g>
+      
+      <!-- Botones de acción -->
+      <g>
+        <rect x="450" y="350" width="150" height="30" rx="5" ry="5" fill="#6a0572" stroke="#ffffff" stroke-width="1"/>
+        <text x="525" y="372" font-size="16" text-anchor="middle">Detalles</text>
+        
+        <rect x="450" y="390" width="150" height="30" rx="5" ry="5" fill="#6a0572" stroke="#ffffff" stroke-width="1"/>
+        <text x="525" y="412" font-size="16" text-anchor="middle">Configuración</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Elementos de la interfaz de Sims 4 (simulados) -->
+  <g opacity="0.5">
+    <!-- Barra superior -->
+    <rect x="0" y="0" width="800" height="30" fill="#6a0572"/>
+    
+    <!-- Iconos de control de juego -->
+    <g fill="#ffffff">
+      <circle cx="30" cy="15" r="8"/>
+      <circle cx="60" cy="15" r="8"/>
+      <circle cx="90" cy="15" r="8"/>
+      <rect x="700" y="7" width="16" height="16" rx="2" ry="2"/>
+      <rect x="730" y="7" width="16" height="16" rx="2" ry="2"/>
+      <rect x="760" y="7" width="16" height="16" rx="2" ry="2"/>
+    </g>
+  </g>
+  
+  <!-- Indicadores de estado -->
+  <g>
+    <!-- Indicador de fertilidad -->
+    <rect x="20" y="50" width="100" height="80" rx="10" ry="10" fill="#222222" stroke="#e056fd" stroke-width="2"/>
+    <text x="70" y="80" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#ffffff">Fertilidad</text>
+    <rect x="30" y="90" width="80" height="10" rx="5" ry="5" fill="#333333" stroke="#e056fd" stroke-width="1"/>
+    <rect x="30" y="90" width="24" height="10" rx="5" ry="5" fill="#e056fd" stroke="#e056fd" stroke-width="1"/>
+    <text x="70" y="115" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#ffffff">30%</text>
+    
+    <!-- Indicador de energía -->
+    <rect x="20" y="140" width="100" height="80" rx="10" ry="10" fill="#222222" stroke="#e056fd" stroke-width="2"/>
+    <text x="70" y="170" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#ffffff">Energía</text>
+    <rect x="30" y="180" width="80" height="10" rx="5" ry="5" fill="#333333" stroke="#e056fd" stroke-width="1"/>
+    <rect x="30" y="180" width="64" height="10" rx="5" ry="5" fill="#e056fd" stroke="#e056fd" stroke-width="1"/>
+    <text x="70" y="205" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#ffffff">80%</text>
+  </g>
+  
+  <!-- Personaje Sim difuminado en el fondo -->
+  <g opacity="0.1">
+    <!-- Silueta de Sim -->
+    <path d="M650,500 C650,400 600,350 550,300 C500,250 450,200 400,200 C350,200 300,250 250,300 C200,350 150,400 150,500 Z" fill="#ffffff"/>
+    <circle cx="400" cy="150" r="50" fill="#ffffff"/>
+  </g>
+  
+  <!-- Información adicional -->
+  <g font-family="Arial, sans-serif" fill="#ffffff">
+    <text x="400" y="530" font-size="16" text-anchor="middle">Sistema de ciclo menstrual realista</text>
+    <text x="400" y="560" font-size="14" text-anchor="middle">Añade una nueva dimensión de realismo a tus Sims</text>
+  </g>
+  
+  <!-- Indicador de mod activo -->
+  <g>
+    <circle cx="50" cy="550" r="10" fill="#e056fd"/>
+    <text x="70" y="555" font-family="Arial, sans-serif" font-size="14" fill="#ffffff">Mod activo</text>
+  </g>
+  
+  <!-- Nota de contenido adulto -->
+  <g>
+    <rect x="600" y="540" width="180" height="30" rx="15" ry="15" fill="#6a0572" stroke="#e056fd" stroke-width="2"/>
+    <text x="690" y="562" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#ffffff">+18 Contenido adulto</text>
+  </g>
+</svg>

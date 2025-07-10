@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#2d2d2d"/>
+  <text x="400" y="300" font-family="Arial, sans-serif" font-size="32" text-anchor="middle" fill="#44bd32">Minecraft</text>
+  <rect x="300" y="200" width="200" height="200" stroke="#44bd32" stroke-width="4" fill="none"/>
+  <path d="M350,250 L350,350 L450,350 L450,250 Z" stroke="#44bd32" stroke-width="4" fill="none"/>
+  <path d="M375,275 L375,325 L425,325 L425,275 Z" stroke="#44bd32" stroke-width="4" fill="none"/>
+</svg>

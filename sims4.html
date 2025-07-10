@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WikiModsATK - Sims 4 Mods</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="img/icons/logo_wiki.webp">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>WikiModsATK</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="minecraft.html">Minecraft</a></li>
+                    <li><a href="sims4.html" class="active">Sims 4</a></li>
+                    <li><a href="https://www.curseforge.com/members/agustheking/projects" id="profile-nav">profile</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+        <section class="game-header sims4-header">
+            <div class="container">
+                <h2>Sims 4 Mods</h2>
+                <p>Explore our collection of Sims 4 mods</p>
+                <div class="search-container">
+                    <input type="text" id="mod-search" placeholder="Search mods...">
+                    <button id="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <section class="mods-section">
+            <div class="container">
+                <div class="mods-grid" id="sims4-mods">
+                    <!-- Los mods se cargarán dinámicamente desde data.js -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 WikiModsATK - All rights reserved</p>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/language.js"></script>
+</body>
+</html>

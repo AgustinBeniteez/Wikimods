@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#2d2d2d"/>
+  <text x="400" y="100" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" fill="#44bd32">OptiFine - Configuración de gráficos</text>
+  
+  <!-- Interfaz de configuración de OptiFine -->
+  <rect x="150" y="150" width="500" height="350" fill="#1e1e1e" stroke="#44bd32" stroke-width="4"/>
+  
+  <!-- Título de la ventana -->
+  <rect x="150" y="150" width="500" height="40" fill="#333333"/>
+  <text x="400" y="175" font-family="Arial, sans-serif" font-size="18" text-anchor="middle" fill="#FFFFFF">Opciones de vídeo</text>
+  
+  <!-- Opciones -->
+  <g transform="translate(180, 210)">
+    <!-- Opción 1 -->
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="14" fill="#FFFFFF">Calidad gráfica:</text>
+    <rect x="300" y="-15" width="140" height="25" fill="#555555" stroke="#777777" stroke-width="1"/>
+    <text x="370" y="2" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#FFFFFF">Fantástica</text>
+    
+    <!-- Opción 2 -->
+    <text x="0" y="40" font-family="Arial, sans-serif" font-size="14" fill="#FFFFFF">Distancia de renderizado:</text>
+    <rect x="300" y="25" width="140" height="25" fill="#555555" stroke="#777777" stroke-width="1"/>
+    <text x="370" y="42" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#FFFFFF">32 chunks</text>
+    
+    <!-- Opción 3 -->
+    <text x="0" y="80" font-family="Arial, sans-serif" font-size="14" fill="#FFFFFF">Suavizado:</text>
+    <rect x="300" y="65" width="140" height="25" fill="#555555" stroke="#777777" stroke-width="1"/>
+    <text x="370" y="82" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#FFFFFF">16x</text>
+    
+    <!-- Opción 4 -->
+    <text x="0" y="120" font-family="Arial, sans-serif" font-size="14" fill="#FFFFFF">Shaders:</text>
+    <rect x="300" y="105" width="140" height="25" fill="#555555" stroke="#777777" stroke-width="1"/>
+    <text x="370" y="122" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#FFFFFF">SEUS v11.0</text>
+    
+    <!-- Opción 5 -->
+    <text x="0" y="160" font-family="Arial, sans-serif" font-size="14" fill="#FFFFFF">Detalles:</text>
+    <rect x="300" y="145" width="140" height="25" fill="#555555" stroke="#777777" stroke-width="1"/>
+    <text x="370" y="162" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#FFFFFF">Máximo</text>
+    
+    <!-- Opción 6 -->
+    <text x="0" y="200" font-family="Arial, sans-serif" font-size="14" fill="#FFFFFF">Nubes:</text>
+    <rect x="300" y="185" width="140" height="25" fill="#555555" stroke="#777777" stroke-width="1"/>
+    <text x="370" y="202" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#FFFFFF">Activadas</text>
+    
+    <!-- Opción 7 -->
+    <text x="0" y="240" font-family="Arial, sans-serif" font-size="14" fill="#FFFFFF">Partículas:</text>
+    <rect x="300" y="225" width="140" height="25" fill="#555555" stroke="#777777" stroke-width="1"/>
+    <text x="370" y="242" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#FFFFFF">Todas</text>
+  </g>
+  
+  <!-- Botones -->
+  <rect x="300" y="460" width="100" height="30" fill="#44bd32" stroke="#2d8a25" stroke-width="2"/>
+  <text x="350" y="480" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#FFFFFF">Aceptar</text>
+  
+  <rect x="420" y="460" width="100" height="30" fill="#555555" stroke="#777777" stroke-width="2"/>
+  <text x="470" y="480" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#FFFFFF">Cancelar</text>
+</svg>

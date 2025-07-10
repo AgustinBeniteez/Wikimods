@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#1e1e1e"/>
+  
+  <!-- Fondo de pantalla de Sims 4 -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a3d62;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#3c6382;stop-opacity:0.8" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bgGradient)"/>
+  
+  <!-- Interfaz de MCCC - Menú de Carreras -->
+  <g>
+    <!-- Ventana de diálogo -->
+    <rect x="150" y="100" width="500" height="400" rx="10" ry="10" fill="#222222" stroke="#82ccdd" stroke-width="3"/>
+    
+    <!-- Barra de título -->
+    <rect x="150" y="100" width="500" height="40" rx="10" ry="10" fill="#0a3d62" stroke="#82ccdd" stroke-width="3"/>
+    <text x="400" y="127" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#ffffff">MC Careers</text>
+    
+    <!-- Botón de cerrar y volver -->
+    <circle cx="630" cy="120" r="12" fill="#e74c3c"/>
+    <g stroke="#ffffff" stroke-width="2">
+      <line x1="625" y1="115" x2="635" y2="125"/>
+      <line x1="625" y1="125" x2="635" y2="115"/>
+    </g>
+    <rect x="170" y="110" width="20" height="20" rx="3" ry="3" fill="#3498db"/>
+    <g stroke="#ffffff" stroke-width="2">
+      <line x1="175" y1="120" x2="185" y2="120"/>
+      <line x1="175" y1="120" x2="180" y2="115"/>
+      <line x1="175" y1="120" x2="180" y2="125"/>
+    </g>
+    
+    <!-- Contenido del menú -->
+    <g font-family="Arial, sans-serif" fill="#ffffff">
+      <!-- Título de sección -->
+      <text x="400" y="170" font-size="20" text-anchor="middle" font-weight="bold">Gestión de Carreras</text>
+      
+      <!-- Selector de Sim -->
+      <rect x="200" y="190" width="400" height="30" rx="5" ry="5" fill="#3c6382" stroke="#82ccdd" stroke-width="1"/>
+      <text x="220" y="212" font-size="16">Sim seleccionado:</text>
+      <text x="580" y="212" font-size="16" text-anchor="end">Bella Goth</text>
+      
+      <!-- Información de carrera actual -->
+      <rect x="200" y="230" width="400" height="60" rx="5" ry="5" fill="#3c6382" stroke="#82ccdd" stroke-width="1"/>
+      <text x="220" y="252" font-size="16">Carrera actual:</text>
+      <text x="580" y="252" font-size="16" text-anchor="end">Crítica Culinaria</text>
+      <text x="220" y="272" font-size="16">Nivel:</text>
+      <text x="580" y="272" font-size="16" text-anchor="end">Nivel 6 (Experta en sabores)</text>
+      
+      <!-- Opciones de carrera -->
+      <g>
+        <text x="220" y="310" font-size="16" font-weight="bold">Acciones disponibles:</text>
+        
+        <!-- Opción 1 -->
+        <rect x="200" y="320" width="400" height="30" rx="5" ry="5" fill="#3c6382" stroke="#82ccdd" stroke-width="1"/>
+        <text x="220" y="342" font-size="16">Promocionar</text>
+        <text x="580" y="342" font-size="16" text-anchor="end">></text>
+        
+        <!-- Opción 2 -->
+        <rect x="200" y="360" width="400" height="30" rx="5" ry="5" fill="#3c6382" stroke="#82ccdd" stroke-width="1"/>
+        <text x="220" y="382" font-size="16">Cambiar carrera</text>
+        <text x="580" y="382" font-size="16" text-anchor="end">></text>
+        
+        <!-- Opción 3 -->
+        <rect x="200" y="400" width="400" height="30" rx="5" ry="5" fill="#3c6382" stroke="#82ccdd" stroke-width="1"/>
+        <text x="220" y="422" font-size="16">Ajustar rendimiento laboral</text>
+        <text x="580" y="422" font-size="16" text-anchor="end">></text>
+      </g>
+      
+      <!-- Botones de acción -->
+      <g>
+        <rect x="300" y="450" width="200" height="30" rx="5" ry="5" fill="#2ecc71" stroke="#ffffff" stroke-width="1"/>
+        <text x="400" y="472" font-size="16" text-anchor="middle">Aplicar cambios</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Elementos de la interfaz de Sims 4 (simulados) -->
+  <g opacity="0.5">
+    <!-- Barra superior -->
+    <rect x="0" y="0" width="800" height="30" fill="#0a3d62"/>
+    
+    <!-- Iconos de control de juego -->
+    <g fill="#ffffff">
+      <circle cx="30" cy="15" r="8"/>
+      <circle cx="60" cy="15" r="8"/>
+      <circle cx="90" cy="15" r="8"/>
+      <rect x="700" y="7" width="16" height="16" rx="2" ry="2"/>
+      <rect x="730" y="7" width="16" height="16" rx="2" ry="2"/>
+      <rect x="760" y="7" width="16" height="16" rx="2" ry="2"/>
+    </g>
+    
+    <!-- Barra de necesidades -->
+    <rect x="20" y="550" width="200" height="30" rx="5" ry="5" fill="#0a3d62" stroke="#82ccdd" stroke-width="1"/>
+    <g>
+      <rect x="30" y="560" width="30" height="10" rx="2" ry="2" fill="#2ecc71"/>
+      <rect x="70" y="560" width="30" height="10" rx="2" ry="2" fill="#f1c40f"/>
+      <rect x="110" y="560" width="30" height="10" rx="2" ry="2" fill="#e74c3c"/>
+      <rect x="150" y="560" width="30" height="10" rx="2" ry="2" fill="#9b59b6"/>
+    </g>
+  </g>
+  
+  <!-- Personaje Sim difuminado en el fondo -->
+  <g opacity="0.1">
+    <!-- Silueta de Sim -->
+    <path d="M650,500 C650,400 600,350 550,300 C500,250 450,200 400,200 C350,200 300,250 250,300 C200,350 150,400 150,500 Z" fill="#ffffff"/>
+    <circle cx="400" cy="150" r="50" fill="#ffffff"/>
+    
+    <!-- Elementos de trabajo -->
+    <rect x="300" y="350" width="200" height="100" rx="10" ry="10" fill="#ffffff"/>
+    <rect x="350" y="300" width="100" height="50" rx="5" ry="5" fill="#ffffff"/>
+  </g>
+  
+  <!-- Información adicional -->
+  <g font-family="Arial, sans-serif" fill="#ffffff">
+    <text x="400" y="530" font-size="16" text-anchor="middle">Gestiona las carreras de todos tus Sims</text>
+    <text x="400" y="560" font-size="14" text-anchor="middle">Promociones, cambios de carrera y más</text>
+  </g>
+  
+  <!-- Indicador de progreso de carrera -->
+  <g>
+    <rect x="600" y="550" width="150" height="15" rx="7.5" ry="7.5" fill="#444444" stroke="#82ccdd" stroke-width="1"/>
+    <rect x="600" y="550" width="90" height="15" rx="7.5" ry="7.5" fill="#3498db"/>
+    <text x="675" y="540" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#ffffff">Progreso: 60%</text>
+  </g>
+</svg>

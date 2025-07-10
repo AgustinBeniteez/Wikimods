@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#2d2d2d"/>
+  <text x="400" y="100" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" fill="#44bd32">Create - Sistema de correas y poleas</text>
+  
+  <!-- Escena de maquinaria de Create con correas -->
+  <rect x="150" y="150" width="500" height="350" fill="#1e1e1e" stroke="#44bd32" stroke-width="4"/>
+  
+  <!-- Fondo de bloques -->
+  <g fill="#808080" stroke="#696969" stroke-width="1">
+    <!-- Pared trasera -->
+    <rect x="200" y="200" width="400" height="250" fill="#696969" stroke="#555555" stroke-width="2"/>
+  </g>
+  
+  <!-- Sistema de poleas y correas -->
+  <g>
+    <!-- Polea grande (izquierda) -->
+    <circle cx="250" cy="250" r="40" fill="#CD7F32" stroke="#A0522D" stroke-width="3"/>
+    <circle cx="250" cy="250" r="30" fill="#CD7F32" stroke="#A0522D" stroke-width="2"/>
+    <circle cx="250" cy="250" r="8" fill="#A0522D"/>
+    
+    <!-- Polea grande (derecha) -->
+    <circle cx="550" cy="250" r="40" fill="#CD7F32" stroke="#A0522D" stroke-width="3"/>
+    <circle cx="550" cy="250" r="30" fill="#CD7F32" stroke="#A0522D" stroke-width="2"/>
+    <circle cx="550" cy="250" r="8" fill="#A0522D"/>
+    
+    <!-- Polea pequeña (centro arriba) -->
+    <circle cx="400" cy="200" r="25" fill="#CD7F32" stroke="#A0522D" stroke-width="2"/>
+    <circle cx="400" cy="200" r="18" fill="#CD7F32" stroke="#A0522D" stroke-width="1.5"/>
+    <circle cx="400" cy="200" r="5" fill="#A0522D"/>
+    
+    <!-- Polea pequeña (centro abajo) -->
+    <circle cx="400" cy="350" r="25" fill="#CD7F32" stroke="#A0522D" stroke-width="2"/>
+    <circle cx="400" cy="350" r="18" fill="#CD7F32" stroke="#A0522D" stroke-width="1.5"/>
+    <circle cx="400" cy="350" r="5" fill="#A0522D"/>
+    
+    <!-- Ejes de conexión -->
+    <rect x="245" y="250" width="10" height="150" fill="#A0522D"/>
+    <rect x="545" y="250" width="10" height="150" fill="#A0522D"/>
+    <rect x="395" y="200" width="10" height="150" fill="#A0522D"/>
+    
+    <!-- Correas -->
+    <path d="M250,210 C250,210 300,170 400,170 C500,170 550,210 550,210" fill="none" stroke="#8B4513" stroke-width="5" stroke-linecap="round"/>
+    <path d="M250,290 C250,290 300,380 400,380 C500,380 550,290 550,290" fill="none" stroke="#8B4513" stroke-width="5" stroke-linecap="round"/>
+    
+    <!-- Detalles de las correas -->
+    <path d="M250,210 C250,210 300,170 400,170 C500,170 550,210 550,210" fill="none" stroke="#5D4037" stroke-width="1" stroke-linecap="round" stroke-dasharray="5,5"/>
+    <path d="M250,290 C250,290 300,380 400,380 C500,380 550,290 550,290" fill="none" stroke="#5D4037" stroke-width="1" stroke-linecap="round" stroke-dasharray="5,5"/>
+  </g>
+  
+  <!-- Flechas de dirección de rotación -->
+  <g fill="#FFFFFF" opacity="0.7">
+    <path d="M250,250 L260,260 L250,270 L240,260 Z">
+      <animateTransform attributeName="transform" type="rotate" from="0 250 250" to="360 250 250" dur="5s" repeatCount="indefinite"/>
+    </path>
+    <path d="M550,250 L560,260 L550,270 L540,260 Z">
+      <animateTransform attributeName="transform" type="rotate" from="0 550 250" to="-360 550 250" dur="5s" repeatCount="indefinite"/>
+    </path>
+    <path d="M400,200 L410,210 L400,220 L390,210 Z">
+      <animateTransform attributeName="transform" type="rotate" from="0 400 200" to="360 400 200" dur="5s" repeatCount="indefinite"/>
+    </path>
+    <path d="M400,350 L410,360 L400,370 L390,360 Z">
+      <animateTransform attributeName="transform" type="rotate" from="0 400 350" to="-360 400 350" dur="5s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <!-- Etiquetas -->
+  <g font-family="Arial, sans-serif" fill="#FFFFFF">
+    <text x="250" y="330" font-size="12" text-anchor="middle">Motor</text>
+    <text x="550" y="330" font-size="12" text-anchor="middle">Generador</text>
+    <text x="400" y="180" font-size="12" text-anchor="middle">Polea tensora</text>
+    <text x="400" y="390" font-size="12" text-anchor="middle">Polea tensora</text>
+  </g>
+  
+  <!-- Indicadores de velocidad -->
+  <g font-family="Arial, sans-serif" fill="#44bd32">
+    <text x="250" y="420" font-size="14" text-anchor="middle">Velocidad: 16 rpm</text>
+    <text x="550" y="420" font-size="14" text-anchor="middle">Velocidad: 16 rpm</text>
+  </g>
+</svg>

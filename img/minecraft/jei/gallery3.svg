@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#2d2d2d"/>
+  <text x="400" y="100" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" fill="#44bd32">JEI - Búsqueda avanzada</text>
+  
+  <!-- Interfaz estilizada de JEI mostrando búsqueda avanzada -->
+  <rect x="200" y="150" width="400" height="300" stroke="#44bd32" stroke-width="4" fill="#1e1e1e"/>
+  
+  <!-- Barra de búsqueda -->
+  <rect x="220" y="170" width="360" height="40" fill="#333333" stroke="#44bd32" stroke-width="2"/>
+  <text x="400" y="195" font-family="Arial, sans-serif" font-size="18" text-anchor="middle" fill="#FFFFFF">@mod:minecraft sword</text>
+  
+  <!-- Resultados de búsqueda -->
+  <g transform="translate(250, 230)">
+    <!-- Espadas de Minecraft -->
+    <rect x="0" y="0" width="60" height="60" fill="#555555" stroke="#777777" stroke-width="1"/>
+    <line x1="30" y1="10" x2="30" y2="50" stroke="#CCCCCC" stroke-width="3"/>
+    <line x1="20" y1="15" x2="40" y2="15" stroke="#CCCCCC" stroke-width="3"/>
+    <text x="30" y="75" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#CCCCCC">Espada de madera</text>
+    
+    <rect x="100" y="0" width="60" height="60" fill="#555555" stroke="#777777" stroke-width="1"/>
+    <line x1="130" y1="10" x2="130" y2="50" stroke="#AAAAAA" stroke-width="3"/>
+    <line x1="120" y1="15" x2="140" y2="15" stroke="#AAAAAA" stroke-width="3"/>
+    <text x="130" y="75" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#CCCCCC">Espada de piedra</text>
+    
+    <rect x="200" y="0" width="60" height="60" fill="#555555" stroke="#777777" stroke-width="1"/>
+    <line x1="230" y1="10" x2="230" y2="50" stroke="#DDDDDD" stroke-width="3"/>
+    <line x1="220" y1="15" x2="240" y2="15" stroke="#DDDDDD" stroke-width="3"/>
+    <text x="230" y="75" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#CCCCCC">Espada de hierro</text>
+    
+    <rect x="0" y="100" width="60" height="60" fill="#555555" stroke="#777777" stroke-width="1"/>
+    <line x1="30" y1="110" x2="30" y2="150" stroke="#FFD700" stroke-width="3"/>
+    <line x1="20" y1="115" x2="40" y2="115" stroke="#FFD700" stroke-width="3"/>
+    <text x="30" y="175" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#CCCCCC">Espada de oro</text>
+    
+    <rect x="100" y="100" width="60" height="60" fill="#555555" stroke="#777777" stroke-width="1"/>
+    <line x1="130" y1="110" x2="130" y2="150" stroke="#1E90FF" stroke-width="3"/>
+    <line x1="120" y1="115" x2="140" y2="115" stroke="#1E90FF" stroke-width="3"/>
+    <text x="130" y="175" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#CCCCCC">Espada de diamante</text>
+    
+    <rect x="200" y="100" width="60" height="60" fill="#555555" stroke="#777777" stroke-width="1"/>
+    <line x1="230" y1="110" x2="230" y2="150" stroke="#4B0082" stroke-width="3"/>
+    <line x1="220" y1="115" x2="240" y2="115" stroke="#4B0082" stroke-width="3"/>
+    <text x="230" y="175" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#CCCCCC">Espada de netherita</text>
+  </g>
+</svg>

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#2d2d2d"/>
+  <text x="400" y="100" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" fill="#44bd32">JEI - Interfaz de recetas</text>
+  
+  <!-- Interfaz estilizada de JEI mostrando recetas -->
+  <rect x="200" y="150" width="400" height="300" stroke="#44bd32" stroke-width="4" fill="#1e1e1e"/>
+  
+  <!-- Elementos de la interfaz -->
+  <rect x="220" y="170" width="360" height="40" fill="#333333" stroke="#44bd32" stroke-width="2"/>
+  <text x="400" y="195" font-family="Arial, sans-serif" font-size="18" text-anchor="middle" fill="#FFFFFF">Búsqueda de items</text>
+  
+  <!-- Grid de items -->
+  <g transform="translate(250, 230)">
+    <!-- Fila 1 -->
+    <rect x="0" y="0" width="40" height="40" fill="#555555" stroke="#777777" stroke-width="1"/>
+    <rect x="50" y="0" width="40" height="40" fill="#555555" stroke="#777777" stroke-width="1"/>
+    <rect x="100" y="0" width="40" height="40" fill="#555555" stroke="#777777" stroke-width="1"/>
+    <rect x="150" y="0" width="40" height="40" fill="#555555" stroke="#777777" stroke-width="1"/>
+    <rect x="200" y="0" width="40" height="40" fill="#555555" stroke="#777777" stroke-width="1"/>
+    <rect x="250" y="0" width="40" height="40" fill="#555555" stroke="#777777" stroke-width="1"/>
+    
+    <!-- Fila 2 -->
+    <rect x="0" y="50" width="40" height="40" fill="#555555" stroke="#777777" stroke-width="1"/>
+    <rect x="50" y="50" width="40" height="40" fill="#555555" stroke="#777777" stroke-width="1"/>
+    <rect x="100" y="50" width="40" height="40" fill="#555555" stroke="#777777" stroke-width="1"/>
+    <rect x="150" y="50" width="40" height="40" fill="#555555" stroke="#777777" stroke-width="1"/>
+    <rect x="200" y="50" width="40" height="40" fill="#555555" stroke="#777777" stroke-width="1"/>
+    <rect x="250" y="50" width="40" height="40" fill="#555555" stroke="#777777" stroke-width="1"/>
+    
+    <!-- Fila 3 -->
+    <rect x="0" y="100" width="40" height="40" fill="#555555" stroke="#777777" stroke-width="1"/>
+    <rect x="50" y="100" width="40" height="40" fill="#555555" stroke="#777777" stroke-width="1"/>
+    <rect x="100" y="100" width="40" height="40" fill="#555555" stroke="#777777" stroke-width="1"/>
+    <rect x="150" y="100" width="40" height="40" fill="#555555" stroke="#777777" stroke-width="1"/>
+    <rect x="200" y="100" width="40" height="40" fill="#555555" stroke="#777777" stroke-width="1"/>
+    <rect x="250" y="100" width="40" height="40" fill="#555555" stroke="#777777" stroke-width="1"/>
+    
+    <!-- Fila 4 -->
+    <rect x="0" y="150" width="40" height="40" fill="#555555" stroke="#777777" stroke-width="1"/>
+    <rect x="50" y="150" width="40" height="40" fill="#555555" stroke="#777777" stroke-width="1"/>
+    <rect x="100" y="150" width="40" height="40" fill="#555555" stroke="#777777" stroke-width="1"/>
+    <rect x="150" y="150" width="40" height="40" fill="#555555" stroke="#777777" stroke-width="1"/>
+    <rect x="200" y="150" width="40" height="40" fill="#555555" stroke="#777777" stroke-width="1"/>
+    <rect x="250" y="150" width="40" height="40" fill="#555555" stroke="#777777" stroke-width="1"/>
+  </g>
+  
+  <!-- Paginación -->
+  <rect x="350" y="400" width="100" height="30" fill="#333333" stroke="#44bd32" stroke-width="2"/>
+  <text x="400" y="420" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#FFFFFF">Página 1/10</text>
+</svg>

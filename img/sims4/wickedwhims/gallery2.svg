@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#1e1e1e"/>
+  
+  <!-- Fondo de pantalla de Sims 4 -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6a0572;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#ab83a1;stop-opacity:0.8" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bgGradient)"/>
+  
+  <!-- Interfaz de Wicked Whims - Sistema de Atracción -->
+  <g>
+    <!-- Ventana de diálogo -->
+    <rect x="150" y="100" width="500" height="400" rx="10" ry="10" fill="#222222" stroke="#e056fd" stroke-width="3"/>
+    
+    <!-- Barra de título -->
+    <rect x="150" y="100" width="500" height="40" rx="10" ry="10" fill="#6a0572" stroke="#e056fd" stroke-width="3"/>
+    <text x="400" y="127" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#ffffff">Wicked Whims - Sistema de Atracción</text>
+    
+    <!-- Botón de cerrar y volver -->
+    <circle cx="630" cy="120" r="12" fill="#e74c3c"/>
+    <g stroke="#ffffff" stroke-width="2">
+      <line x1="625" y1="115" x2="635" y2="125"/>
+      <line x1="625" y1="125" x2="635" y2="115"/>
+    </g>
+    <rect x="170" y="110" width="20" height="20" rx="3" ry="3" fill="#ab83a1"/>
+    <g stroke="#ffffff" stroke-width="2">
+      <line x1="175" y1="120" x2="185" y2="120"/>
+      <line x1="175" y1="120" x2="180" y2="115"/>
+      <line x1="175" y1="120" x2="180" y2="125"/>
+    </g>
+    
+    <!-- Contenido del menú -->
+    <g font-family="Arial, sans-serif" fill="#ffffff">
+      <!-- Título de sección -->
+      <text x="400" y="170" font-size="20" text-anchor="middle" font-weight="bold">Preferencias de Atracción</text>
+      
+      <!-- Sim seleccionado -->
+      <rect x="200" y="190" width="400" height="30" rx="5" ry="5" fill="#333333" stroke="#e056fd" stroke-width="1"/>
+      <text x="220" y="212" font-size="16">Sim seleccionado:</text>
+      <text x="580" y="212" font-size="16" text-anchor="end">Summer Holiday</text>
+      
+      <!-- Características de atracción -->
+      <g>
+        <text x="220" y="250" font-size="16" font-weight="bold">Atracción por rasgos físicos:</text>
+        
+        <!-- Característica 1 -->
+        <rect x="200" y="260" width="400" height="30" rx="5" ry="5" fill="#333333" stroke="#e056fd" stroke-width="1"/>
+        <text x="220" y="282" font-size="16">Tipo de cuerpo</text>
+        <text x="580" y="282" font-size="16" text-anchor="end">Atlético +3</text>
+        
+        <!-- Característica 2 -->
+        <rect x="200" y="300" width="400" height="30" rx="5" ry="5" fill="#333333" stroke="#e056fd" stroke-width="1"/>
+        <text x="220" y="322" font-size="16">Color de cabello</text>
+        <text x="580" y="322" font-size="16" text-anchor="end">Rubio +2</text>
+        
+        <!-- Característica 3 -->
+        <rect x="200" y="340" width="400" height="30" rx="5" ry="5" fill="#333333" stroke="#e056fd" stroke-width="1"/>
+        <text x="220" y="362" font-size="16">Estilo de vestir</text>
+        <text x="580" y="362" font-size="16" text-anchor="end">Formal +1</text>
+      </g>
+      
+      <!-- Rasgos de personalidad -->
+      <g>
+        <text x="220" y="400" font-size="16" font-weight="bold">Atracción por personalidad:</text>
+        
+        <!-- Rasgo 1 -->
+        <rect x="200" y="410" width="190" height="30" rx="5" ry="5" fill="#333333" stroke="#e056fd" stroke-width="1"/>
+        <text x="220" y="432" font-size="16">Creativo</text>
+        <text x="370" y="432" font-size="16" text-anchor="end">+2</text>
+        
+        <!-- Rasgo 2 -->
+        <rect x="410" y="410" width="190" height="30" rx="5" ry="5" fill="#333333" stroke="#e056fd" stroke-width="1"/>
+        <text x="430" y="432" font-size="16">Romántico</text>
+        <text x="580" y="432" font-size="16" text-anchor="end">+3</text>
+      </g>
+      
+      <!-- Botones de acción -->
+      <g>
+        <rect x="300" y="450" width="200" height="30" rx="5" ry="5" fill="#6a0572" stroke="#ffffff" stroke-width="1"/>
+        <text x="400" y="472" font-size="16" text-anchor="middle">Modificar preferencias</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Elementos de la interfaz de Sims 4 (simulados) -->
+  <g opacity="0.5">
+    <!-- Barra superior -->
+    <rect x="0" y="0" width="800" height="30" fill="#6a0572"/>
+    
+    <!-- Iconos de control de juego -->
+    <g fill="#ffffff">
+      <circle cx="30" cy="15" r="8"/>
+      <circle cx="60" cy="15" r="8"/>
+      <circle cx="90" cy="15" r="8"/>
+      <rect x="700" y="7" width="16" height="16" rx="2" ry="2"/>
+      <rect x="730" y="7" width="16" height="16" rx="2" ry="2"/>
+      <rect x="760" y="7" width="16" height="16" rx="2" ry="2"/>
+    </g>
+  </g>
+  
+  <!-- Indicador de atracción -->
+  <g>
+    <rect x="20" y="50" width="100" height="100" rx="10" ry="10" fill="#222222" stroke="#e056fd" stroke-width="2"/>
+    <circle cx="70" cy="80" r="30" fill="#6a0572" stroke="#e056fd" stroke-width="2"/>
+    <text x="70" y="85" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" fill="#ffffff">85%</text>
+    <text x="70" y="120" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#ffffff">Atracción</text>
+  </g>
+  
+  <!-- Personajes Sim difuminados en el fondo -->
+  <g opacity="0.1">
+    <!-- Silueta de Sim 1 -->
+    <path d="M650,500 C650,400 600,350 550,300 C500,250 450,200 400,200 C350,200 300,250 250,300 C200,350 150,400 150,500 Z" fill="#ffffff"/>
+    <circle cx="400" cy="150" r="50" fill="#ffffff"/>
+    
+    <!-- Silueta de Sim 2 (más pequeña, a un lado) -->
+    <path d="M750,500 C750,430 720,400 690,370 C660,340 630,310 600,310 C570,310 540,340 510,370 C480,400 450,430 450,500 Z" fill="#ffffff"/>
+    <circle cx="600" cy="280" r="30" fill="#ffffff"/>
+    
+    <!-- Corazón entre los Sims -->
+    <path d="M500,350 C520,320 560,320 560,350 C560,380 500,410 500,410 C500,410 440,380 440,350 C440,320 480,320 500,350 Z" fill="#e056fd" opacity="0.3"/>
+  </g>
+  
+  <!-- Información adicional -->
+  <g font-family="Arial, sans-serif" fill="#ffffff">
+    <text x="400" y="530" font-size="16" text-anchor="middle">Sistema de atracción basado en preferencias</text>
+    <text x="400" y="560" font-size="14" text-anchor="middle">Crea relaciones más realistas entre tus Sims</text>
+  </g>
+  
+  <!-- Indicador de mod activo -->
+  <g>
+    <circle cx="50" cy="550" r="10" fill="#e056fd"/>
+    <text x="70" y="555" font-family="Arial, sans-serif" font-size="14" fill="#ffffff">Mod activo</text>
+  </g>
+  
+  <!-- Nota de contenido adulto -->
+  <g>
+    <rect x="600" y="540" width="180" height="30" rx="15" ry="15" fill="#6a0572" stroke="#e056fd" stroke-width="2"/>
+    <text x="690" y="562" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#ffffff">+18 Contenido adulto</text>
+  </g>
+</svg>
