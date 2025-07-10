@@ -15,9 +15,14 @@ const modsData = {
             creationDate: "Jul 6, 2025",
             mainImage: "https://media.forgecdn.net/attachments/description/1301365/description_ebef8487-441d-4a30-8cbb-377951845cb9.png",
             gallery: [
-                "../img/minecraft/indexer/gallery1.svg",
-                "../img/minecraft/indexer/gallery2.svg",
-                "../img/minecraft/indexer/gallery3.svg"
+                "https://media.forgecdn.net/attachments/description/1301365/description_ebef8487-441d-4a30-8cbb-377951845cb9.png",
+                "https://media.forgecdn.net/attachments/description/1301365/description_d40c441a-a58c-4d5c-95c9-3c15f3ec2103.png",
+                "https://media.forgecdn.net/attachments/description/1301365/description_04049f06-8ea9-44be-907c-4bd27f4206a2.png",
+                "https://media.forgecdn.net/attachments/description/1301365/description_4e87e266-8fe0-4bb6-9d2b-e75cfc8876c8.png",
+                "https://media.forgecdn.net/attachments/description/1301365/description_c0a9d64b-e47c-488d-9a86-13ac4e230701.png",
+                "https://media.forgecdn.net/attachments/description/1301365/description_84d6d099-80ae-49c7-8586-341e21f846bc.png",
+                "https://media.forgecdn.net/attachments/description/1301365/description_6f0bc766-4682-452c-b331-13b5872e7b48.png",
+                "https://media.forgecdn.net/attachments/description/1301365/description_803eb2df-1b1a-411f-b822-fd212bc4dbf5.png"
             ],
             features: [
                 "Controlador Indexer: El cerebro del sistema que detecta conectores hasta a 250 bloques de distancia",
@@ -41,9 +46,10 @@ const modsData = {
             creationDate: "Sep 2, 2024",
             mainImage: "https://media.forgecdn.net/attachments/description/1095687/description_de03f987-48ed-4797-ba0d-0e98f96c09a8.png",
             gallery: [
-                "../img/minecraft/modern-decor-outdoor/gallery1.svg",
-                "../img/minecraft/modern-decor-outdoor/gallery2.svg",
-                "../img/minecraft/modern-decor-outdoor/gallery3.svg"
+                "https://media.forgecdn.net/attachments/description/1095687/description_f809c91a-7fc0-4bb4-87ea-a6eff7626c98.png",
+                "https://media.forgecdn.net/attachments/description/1095687/description_bf7144d0-3928-4580-904a-31555004dc0e.png",
+                "https://media.forgecdn.net/attachments/description/1095687/description_90227e64-ad39-44d5-8cc4-67b6c7745b9b.png",
+                "https://media.forgecdn.net/attachments/description/1095687/description_db0e8f13-5c04-482f-a842-a9ec3395a84a.png"
             ],
             features: [
                 "Muebles de exterior elegantes y funcionales",
@@ -67,9 +73,11 @@ const modsData = {
             creationDate: "Aug 27, 2024",
             mainImage: "https://media.forgecdn.net/attachments/description/1091629/description_adfa39e8-d237-4fd7-8a39-040497b883e3.png",
             gallery: [
-                "../img/minecraft/modern-decor-wooden/gallery1.svg",
-                "../img/minecraft/modern-decor-wooden/gallery2.svg",
-                "../img/minecraft/modern-decor-wooden/gallery3.svg"
+                "https://media.forgecdn.net/attachments/description/1091629/description_4a699ab0-8089-4e40-9d9d-f72c5721c4c8.gif",
+                "https://media.forgecdn.net/attachments/description/1091629/description_28325527-dd3d-41b3-a73f-099d7101dbb5.png",
+                "https://media.forgecdn.net/attachments/description/1091629/description_265a6bf1-e75e-49c3-b6df-1b00b3f69347.png",
+                "https://media.forgecdn.net/attachments/description/1091629/description_aaa6b941-8245-4ae8-a20e-03e3411d7059.png",
+                "https://media.forgecdn.net/attachments/description/1091629/description_126982f3-eeb9-4d5c-bc2a-bfd938ace595.png"
             ],
             features: [
                 "Muebles de interior con diseño moderno",
@@ -93,9 +101,11 @@ const modsData = {
             creationDate: "Mar 3, 2025",
             mainImage: "https://media.forgecdn.net/attachments/description/null/description_7e297358-313c-453f-bf64-8a3f58cae9c3.png",
             gallery: [
-                "../img/minecraft/makeup-aesthetics-decor/gallery1.svg",
-                "../img/minecraft/makeup-aesthetics-decor/gallery2.svg",
-                "../img/minecraft/makeup-aesthetics-decor/gallery3.svg"
+                "https://media.forgecdn.net/attachments/description/null/description_4220b993-2d40-4521-ae70-d651fc481f82.png",
+                "https://media.forgecdn.net/attachments/description/null/description_ac588fce-20a6-4a9e-bffa-aaa210ae3f62.png",
+                "https://media.forgecdn.net/attachments/description/null/description_8fbefd6a-640a-4836-a06a-3dc262b69242.png",
+                "https://media.forgecdn.net/attachments/description/null/description_0ea0f17e-d8fc-40d8-a096-fdbfccb07810.png",
+                "https://media.forgecdn.net/attachments/description/null/description_7e297358-313c-453f-bf64-8a3f58cae9c3.png"
             ],
             features: [
                 "Elementos de maquillaje y belleza",
@@ -119,9 +129,9 @@ const modsData = {
             creationDate: "Aug 15, 2024",
             mainImage: "https://media.forgecdn.net/attachments/description/1084729/description_43b41f66-7272-4ff8-9c15-7bcb17ed830e.png",
             gallery: [
-                "../img/minecraft/hazbin-hotel-items/gallery1.svg",
-                "../img/minecraft/hazbin-hotel-items/gallery2.svg",
-                "../img/minecraft/hazbin-hotel-items/gallery3.svg"
+                "https://media.forgecdn.net/attachments/description/1084729/description_67cbebf4-a1a7-4f49-8037-36ea9519355f.png",
+                "https://media.forgecdn.net/attachments/description/1084729/description_2bdd4b70-a7b4-410e-ace3-3cb540281129.png",
+                "https://media.forgecdn.net/attachments/description/1084729/description_a7b538d2-e345-44eb-a20d-9d3628ffd4ad.png"
             ],
             features: [
                 "Puertas inspiradas en la serie",
