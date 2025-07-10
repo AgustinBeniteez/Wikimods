@@ -145,7 +145,7 @@ const modsData = {
             curseForgeUrl: "https://www.curseforge.com/sims4/build-buy/poster-arcane-jinx-vi",
             downloadCount: "3.6K",
             creationDate: "2024-05-15",
-            mainImage: "../img/sims4/placeholder.svg",
+            mainImage: "https://media.forgecdn.net/attachments/description/1207766/description_a1af8d3e-5af4-471e-b7bb-5f3e7cdee175.png",
             gallery: [
                 "../img/sims4/placeholder.svg",
                 "../img/sims4/placeholder.svg",
@@ -170,7 +170,7 @@ const modsData = {
             curseForgeUrl: "https://www.curseforge.com/sims4/build-buy/arcane-pictures-square-frame",
             downloadCount: "2.3K",
             creationDate: "2024-05-10",
-            mainImage: "../img/sims4/placeholder.svg",
+            mainImage: "https://media.forgecdn.net/attachments/description/null/description_67912529-c980-4826-b830-2e66ab79ebcb.png",
             gallery: [
                 "../img/sims4/placeholder.svg",
                 "../img/sims4/placeholder.svg",
@@ -195,7 +195,7 @@ const modsData = {
             curseForgeUrl: "https://www.curseforge.com/sims4/create-a-sim/cats-t-shirt-female",
             downloadCount: "1.2K",
             creationDate: "2025-02-24",
-            mainImage: "../img/sims4/placeholder.svg",
+            mainImage: "https://media.forgecdn.net/avatars/thumbnails/1185/447/256/256/638759388512417620.png",
             gallery: [
                 "../img/sims4/placeholder.svg",
                 "../img/sims4/placeholder.svg",
@@ -220,7 +220,7 @@ const modsData = {
             curseForgeUrl: "https://www.curseforge.com/sims4/create-a-sim/edit-valorant-t-shirt-vct-female",
             downloadCount: "874",
             creationDate: "2025-01-15",
-            mainImage: "../img/sims4/placeholder.svg",
+            mainImage: "https://media.forgecdn.net/attachments/description/1206392/description_e5aca6a6-a3db-43fb-89df-50584e9dfa63.png",
             gallery: [
                 "../img/sims4/placeholder.svg",
                 "../img/sims4/placeholder.svg",
@@ -245,7 +245,7 @@ const modsData = {
             curseForgeUrl: "https://www.curseforge.com/sims4/create-a-sim/valorant-t-shirt-vct-male",
             downloadCount: "874",
             creationDate: "2025-01-15",
-            mainImage: "../img/sims4/placeholder.svg",
+            mainImage: "https://media.forgecdn.net/attachments/description/null/description_a7fd27c2-c869-4c3d-b681-d804d4497db0.png",
             gallery: [
                 "../img/sims4/placeholder.svg",
                 "../img/sims4/placeholder.svg",
