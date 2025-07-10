@@ -18,7 +18,7 @@ const modsData = window.modsData = {
                 en: "Automatic item organization and management system"
             },
             curseForgeUrl: "https://www.curseforge.com/minecraft/mc-mods/indexer",
-            downloadCount: "100",
+            downloadCount: "110",
             creationDate: "Jul 6, 2025",
             mainImage: "https://media.forgecdn.net/attachments/description/1301365/description_ebef8487-441d-4a30-8cbb-377951845cb9.png",
             gallery: [
