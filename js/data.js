@@ -78,13 +78,14 @@ const modsData = window.modsData = {
                     },
                     recipe: {
                         pattern: [
-                            " R ",
-                            "AFA",
-                            " R "
+                            "ITI",
+                            "RFR",
+                            "ITI"
                         ],
                         key: {
+                            I: "iron_ingot",
                             R: "redstone",
-                            A: "redstone_torch",
+                            T: "redstone_torch",
                             F: "item_frame"
                         },
                         result: "1 Indexer Connector"

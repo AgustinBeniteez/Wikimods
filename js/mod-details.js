@@ -218,7 +218,7 @@ window.renderModDetails = function(mod) {
                                     'carbón': 'coal',
                                     'carbón vegetal': 'charcoal',
                                     'antorcha': 'torch',
-                                    'Antorcha Redstone': 'redstone_torch',
+                                    'redstone_torch': 'redstone_torch',
                                     'antorcha de piedra luminosa': 'glowstone',
                                     'piedra luminosa': 'glowstone',
                                     'polvo de piedra luminosa': 'glowstone_dust',
@@ -782,7 +782,17 @@ window.renderModDetails = function(mod) {
                             
                             // Obtener el nombre normalizado del ingrediente para la imagen
                             const ingredientImageName = normalizeIngredientName(ingredient);
-                            const ingredientImagePath = `../img/minecraft/item/${ingredientImageName}.png`;
+                            
+                            // Lista de ítems que están en la carpeta block
+                            const blockItems = ['redstone_torch', 'torch', 'repeater', 'comparator', 'hopper', 'chest', 'furnace', 'dispenser', 'dropper', 'observer', 'piston', 'sticky_piston', 'lever', 'button', 'pressure_plate', 'daylight_detector', 'tripwire_hook', 'trapped_chest', 'bell', 'lantern', 'soul_lantern', 'campfire', 'soul_campfire', 'candle', 'chain'];
+                            
+                            // Comprobar si el ítem está en la carpeta block
+                            let ingredientImagePath;
+                            if (blockItems.includes(ingredientImageName)) {
+                                ingredientImagePath = `../img/minecraft/item/block/${ingredientImageName}.png`;
+                            } else {
+                                ingredientImagePath = `../img/minecraft/item/${ingredientImageName}.png`;
+                            }
                             
                             // Usar la imagen del ingrediente en lugar de la letra
                             modHTML += `<div class="recipe-cell" title="${ingredient}">
