@@ -521,6 +521,7 @@ nav a.active::after {
     background-repeat: no-repeat;
     margin-right: 1rem;
     border-radius: var(--border-radius);
+    image-rendering: pixelated;
 }
 
 .item-header h4 {
