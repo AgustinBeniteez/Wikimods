@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <!-- Base del extractor (similar a un cofre con elementos mecánicos) -->
+  <rect x="1" y="3" width="14" height="10" fill="#8B5A2B" stroke="#5D4037" stroke-width="0.5"/>
+  
+  <!-- Detalles metálicos (marco) -->
+  <rect x="1" y="3" width="14" height="1" fill="#A1887F" stroke="#5D4037" stroke-width="0.2"/>
+  <rect x="1" y="12" width="14" height="1" fill="#A1887F" stroke="#5D4037" stroke-width="0.2"/>
+  <rect x="1" y="3" width="1" height="10" fill="#A1887F" stroke="#5D4037" stroke-width="0.2"/>
+  <rect x="14" y="3" width="1" height="10" fill="#A1887F" stroke="#5D4037" stroke-width="0.2"/>
+  
+  <!-- Tolva en la parte superior -->
+  <path d="M6,3 L4,1 L12,1 L10,3" fill="#78909C" stroke="#546E7A" stroke-width="0.5"/>
+  
+  <!-- Pistón en la parte inferior -->
+  <rect x="5" y="10" width="6" height="3" fill="#78909C" stroke="#546E7A" stroke-width="0.5"/>
+  <rect x="6" y="9" width="4" height="1" fill="#B71C1C" stroke="#7B1FA2" stroke-width="0.2"/>
+  
+  <!-- Detalles de redstone (cables) -->
+  <path d="M3,6 L13,6 M3,8 L13,8" stroke="#B71C1C" stroke-width="0.5" fill="none"/>
+  <circle cx="8" cy="7" r="1.5" fill="#B71C1C" stroke="#7B1FA2" stroke-width="0.2"/>
+</svg>

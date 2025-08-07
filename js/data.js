@@ -194,6 +194,29 @@ const modsData = window.modsData = {
                     }
                 },
                 {
+                    name: "Extractor",
+                    image: "../img/minecraft/item/block/extractor_block.png",
+                    description: {
+                        es: "Componente que permite extraer items de contenedores automáticamente.",
+                        en: "Component that allows automatic extraction of items from containers."
+                    },
+                    recipe: {
+                        pattern: [
+                            "IHI",
+                            "RCR",
+                            "IPI"
+                        ],
+                        key: {
+                            I: "iron_ingot",
+                            H: "hopper",
+                            R: "redstone",
+                            C: "chest",
+                            P: "piston"
+                        },
+                        result: "1 Extractor"
+                    }
+                },
+                {
                     name: "Indexer Manual",
                     image: "../img/minecraft/item/indexer_manual.png",
                     description: {
@@ -212,42 +235,6 @@ const modsData = window.modsData = {
                             P: "indexer_pipeitem"
                         },
                         result: "1 Indexer Manual"
-                    }
-                },
-                {
-                    name: "Extractor",
-                    image: "../img/minecraft/item/block/extractor_block.png",
-                    description: {
-                        es: "Componente que extrae automáticamente los items de los contenedores conectados al sistema Indexer.",
-                        en: "Component that automatically extracts items from containers connected to the Indexer system."
-                    },
-                    recipe: {
-                        type: "minecraft:crafting_shaped",
-                        pattern: [
-                            "IHI",
-                            "RCR",
-                            "IPI"
-                        ],
-                        key: {
-                            I: {
-                                tag: "forge:ingots/iron"
-                            },
-                            H: {
-                                item: "minecraft:hopper"
-                            },
-                            R: {
-                                item: "minecraft:redstone"
-                            },
-                            C: {
-                                item: "minecraft:chest"
-                            },
-                            P: {
-                                item: "minecraft:piston"
-                            }
-                        },
-                        result: {
-                            item: "indexer:extractor"
-                        }
                     }
                 }
             ]

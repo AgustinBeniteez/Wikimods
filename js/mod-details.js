@@ -698,6 +698,7 @@ window.renderModDetails = function(mod) {
                                     'pepita de oro': 'gold_nugget',
                                     'pepita de hierro': 'iron_nugget',
                                     'lingote de cobre': 'copper_ingot',
+                                    'extractor': 'extractor',
                                     'cobre crudo': 'raw_copper',
                                     'hierro crudo': 'raw_iron',
                                     'oro crudo': 'raw_gold',
