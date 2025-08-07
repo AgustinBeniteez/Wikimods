@@ -18,7 +18,7 @@ const modsData = window.modsData = {
                 en: "Automatic item organization and management system"
             },
             curseForgeUrl: "https://www.curseforge.com/minecraft/mc-mods/indexer",
-            downloadCount: "110",
+            downloadCount: "710",
             creationDate: "Jul 6, 2025",
             mainImage: "https://media.forgecdn.net/attachments/description/1301365/description_ebef8487-441d-4a30-8cbb-377951845cb9.png",
             gallery: [
@@ -212,6 +212,42 @@ const modsData = window.modsData = {
                             P: "indexer_pipeitem"
                         },
                         result: "1 Indexer Manual"
+                    }
+                },
+                {
+                    name: "Extractor",
+                    image: "../img/minecraft/item/block/extractor_block.png",
+                    description: {
+                        es: "Componente que extrae automáticamente los items de los contenedores conectados al sistema Indexer.",
+                        en: "Component that automatically extracts items from containers connected to the Indexer system."
+                    },
+                    recipe: {
+                        type: "minecraft:crafting_shaped",
+                        pattern: [
+                            "IHI",
+                            "RCR",
+                            "IPI"
+                        ],
+                        key: {
+                            I: {
+                                tag: "forge:ingots/iron"
+                            },
+                            H: {
+                                item: "minecraft:hopper"
+                            },
+                            R: {
+                                item: "minecraft:redstone"
+                            },
+                            C: {
+                                item: "minecraft:chest"
+                            },
+                            P: {
+                                item: "minecraft:piston"
+                            }
+                        },
+                        result: {
+                            item: "indexer:extractor"
+                        }
                     }
                 }
             ]
