@@ -18,7 +18,7 @@ const modsData = window.modsData = {
                 en: "Automatic item organization and management system"
             },
             curseForgeUrl: "https://www.curseforge.com/minecraft/mc-mods/indexer",
-            downloadCount: "710",
+            downloadCount: "34K",
             creationDate: "Jul 6, 2025",
             mainImage: "https://media.forgecdn.net/attachments/description/1301365/description_ebef8487-441d-4a30-8cbb-377951845cb9.png",
             gallery: [
@@ -255,7 +255,7 @@ const modsData = window.modsData = {
                 en: "Modern decoration for outdoors and pools"
             },
             curseForgeUrl: "https://www.curseforge.com/minecraft/mc-mods/modern-decor-outdoor",
-            downloadCount: "7.6K",
+            downloadCount: "10.1K",
             creationDate: "Sep 2, 2024",
             mainImage: "https://media.forgecdn.net/attachments/description/1095687/description_de03f987-48ed-4797-ba0d-0e98f96c09a8.png",
             gallery: [
@@ -320,7 +320,7 @@ const modsData = window.modsData = {
                 en: "Modern wooden furniture and interior decoration"
             },
             curseForgeUrl: "https://www.curseforge.com/minecraft/mc-mods/modern-decor-wooden",
-            downloadCount: "9.7K",
+            downloadCount: "12.7K",
             creationDate: "Aug 27, 2024",
             mainImage: "https://media.forgecdn.net/attachments/description/1091629/description_adfa39e8-d237-4fd7-8a39-040497b883e3.png",
             gallery: [
@@ -384,7 +384,7 @@ const modsData = window.modsData = {
                 en: "Aesthetic decoration and beauty elements"
             },
             curseForgeUrl: "https://www.curseforge.com/minecraft/mc-mods/makeup-aesthetics-decor",
-            downloadCount: "1.7K",
+            downloadCount: "3.1K",
             creationDate: "Mar 3, 2025",
             mainImage: "https://media.forgecdn.net/attachments/description/null/description_7e297358-313c-453f-bf64-8a3f58cae9c3.png",
             gallery: [
@@ -449,7 +449,7 @@ const modsData = window.modsData = {
                 en: "Elements inspired by the Hazbin Hotel series"
             },
             curseForgeUrl: "https://www.curseforge.com/minecraft/mc-mods/hazbin-hotel-items",
-            downloadCount: "1.7K",
+            downloadCount: "2.1K",
             creationDate: "Aug 15, 2024",
             mainImage: "https://media.forgecdn.net/attachments/description/1084729/description_43b41f66-7272-4ff8-9c15-7bcb17ed830e.png",
             gallery: [
