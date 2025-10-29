@@ -404,7 +404,7 @@ Update created by **AgustínBenitez** — 10/10/2025`,
                         ],
                         key: {
                             D: "diamond",
-                            C: "transfer_speed_upgrade_copper"
+                            C: "transfer_speed_upgrade_copperr"
                         },
                         result: "1 Transfer Speed Upgrade Advanced"
                     }
