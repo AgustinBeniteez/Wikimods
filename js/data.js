@@ -363,7 +363,7 @@ Update created by **AgustínBenitez** — 10/10/2025`,
                 },
                 {
                     name: "Transfer Speed Upgrade Copper",
-                    image: "../img/minecraft/item/transfer_speed_upgrade_copper.png",
+                    image: "../img/minecraft/item/transfer_speed_upgrade_copperr.png",
                     description: {
                         es: "Mejora de cobre 10x. Crafteo: rodea la mejora básica con lingotes de cobre.",
                         en: "Copper upgrade 10x. Crafting: surround the Basic upgrade with copper ingots."
@@ -423,19 +423,20 @@ Update created by **AgustínBenitez** — 10/10/2025`,
                 },
                 {
                     name: "Transfer Speed Upgrade Definitive",
-                    image: "../img/minecraft/item/transfer_speed_upgrade_definitive.png",
+                    image: "../img/minecraft/item/transfer_speed_upgrade_definitivee.png",
                     description: {
                         es: "Mejora definitiva 256x. Nivel final. Consulta el libro de recetas en el juego si tu pack incluye su receta.",
                         en: "Definitive upgrade 256x. Final tier. Check the in-game recipe book if your pack includes its recipe."
                     },
                     recipe: {
                         pattern: [
-                            "???",
-                            "?E?",
-                            "???"
+                            "WNW",
+                            "NEN",
+                            "WNW"
                         ],
                         key: {
-                            "?": "unknown",
+                            W: "nether_star",
+                            N: "netherite_ingot",
                             E: "transfer_speed_upgrade_elite"
                         },
                         result: "1 Transfer Speed Upgrade Definitive"
@@ -443,7 +444,7 @@ Update created by **AgustínBenitez** — 10/10/2025`,
                 },
                 {
                     name: "Base Filter",
-                    image: "../img/minecraft/item/base_filter.png",
+                    image: "../img/minecraft/item/indexer_filter_base.png",
                     description: {
                         es: "Componente base usado para craftear otros filtros.",
                         en: "Core component used for crafting other filters."
@@ -464,7 +465,7 @@ Update created by **AgustínBenitez** — 10/10/2025`,
                 },
                 {
                     name: "Name Filter",
-                    image: "../img/minecraft/item/name_filter.png",
+                    image: "../img/minecraft/item/indexer_filter_name.png",
                     description: {
                         es: "Filtra items por nombre exacto. Haz clic derecho para establecer el nombre objetivo.",
                         en: "Filters items by exact custom name. Right-click to set the target name."
@@ -477,14 +478,14 @@ Update created by **AgustínBenitez** — 10/10/2025`,
                         ],
                         key: {
                             N: "name_tag",
-                            B: "base_filter"
+                            B: "indexer_filter_base"
                         },
                         result: "1 Name Filter"
                     }
                 },
                 {
                     name: "Attribute Filter",
-                    image: "../img/minecraft/item/attribute_filter.png",
+                    image: "../img/minecraft/item/indexer_filter_attribute.png",
                     description: {
                         es: "Filtra por atributos como encantamientos. Haz clic derecho para establecer el atributo.",
                         en: "Filters by attributes like enchantments. Right-click to set the attribute."
@@ -492,92 +493,101 @@ Update created by **AgustínBenitez** — 10/10/2025`,
                     recipe: {
                         pattern: [
                             " E ",
-                            "EBE",
-                            " E "
+                            " F ",
+                            " N "
                         ],
                         key: {
                             E: "enchanted_book",
-                            B: "base_filter"
+                            F: "indexer_filter_base",
+                            N: "name_tag"
                         },
                         result: "1 Attribute Filter"
                     }
                 },
                 {
                     name: "Custom Tag Blocker",
-                    image: "../img/minecraft/item/custom_tag_blocker.png",
+                    image: "../img/minecraft/item/indexer_filter_custom_tag.png",
                     description: {
                         es: "Bloquea items por ID/tag. Haz clic derecho para establecer el item/tag a bloquear.",
                         en: "Blocks items by ID/tag. Right-click to set the item/tag to block."
                     },
                     recipe: {
                         pattern: [
-                            " B ",
-                            "BBB",
-                            " B "
+                            " R ",
+                            "RFR",
+                            " N "
                         ],
                         key: {
-                            B: "barrier",
-                            B: "base_filter"
+                            R: "redstone",
+                            F: "indexer_filter_base",
+                            N: "name_tag"
                         },
                         result: "1 Custom Tag Blocker"
                     }
                 },
                 {
                     name: "Food Filter",
-                    image: "../img/minecraft/item/food_filter.png",
+                    image: "../img/minecraft/item/indexer_filter_food.png",
                     description: {
                         es: "Permite solo items comestibles.",
                         en: "Allows only edible items."
                     },
                     recipe: {
                         pattern: [
-                            " A ",
-                            "ABA",
-                            " A "
+                            "LLL",
+                            "SFP",
+                            "LLL"
                         ],
                         key: {
-                            A: "apple",
-                            B: "base_filter"
+                            L: "leather",
+                            S: "cooked_beef",
+                            F: "indexer_filter_base",
+                            P: "potato"
                         },
                         result: "1 Food Filter"
                     }
                 },
                 {
                     name: "Fuel Filter",
-                    image: "../img/minecraft/item/fuel_filter.png",
+                    image: "../img/minecraft/item/indexer_filter_fuel.png",
                     description: {
                         es: "Permite solo items de combustible (ej: carbón, carbón vegetal, cubo de lava en hornos).",
                         en: "Allows only fuel items (e.g., coal, charcoal, lava bucket in furnaces)."
                     },
                     recipe: {
                         pattern: [
-                            " C ",
-                            "CBC",
-                            " C "
+                            "LCL",
+                            "CFC",
+                            "LBL"
                         ],
                         key: {
+                            L: "leather",
                             C: "coal",
-                            B: "base_filter"
+                            F: "indexer_filter_base",
+                            B: "charcoal"
                         },
                         result: "1 Fuel Filter"
                     }
                 },
                 {
                     name: "Tools Filter",
-                    image: "../img/minecraft/item/tools_filter.png",
+                    image: "../img/minecraft/item/indexer_filter_tools.png",
                     description: {
                         es: "Permite solo herramientas: picos, hachas, palas, azadas y espadas.",
                         en: "Allows only tools: pickaxes, axes, shovels, hoes, and swords."
                     },
                     recipe: {
                         pattern: [
-                            " P ",
-                            "PBP",
-                            " P "
+                            "LFL",
+                            "PAH",
+                            "LLL"
                         ],
                         key: {
+                            L: "leather",
+                            F: "indexer_filter_base",
                             P: "iron_pickaxe",
-                            B: "base_filter"
+                            A: "iron_axe",
+                            H: "iron_hoe"
                         },
                         result: "1 Tools Filter"
                     }
@@ -624,6 +634,27 @@ Update created by **AgustínBenitez** — 10/10/2025`,
                             P: "indexer_pipeitem"
                         },
                         result: "1 Indexer Manual"
+                    }
+                },
+                {
+                    name: "Connector Capacity Upgrade",
+                    image: "../img/minecraft/item/connector_capacity_upgrade.png",
+                    description: {
+                        es: "Mejora de capacidad para conectores. Aumenta el espacio de almacenamiento del conector cuando se aplica con Shift + Clic derecho. Tiene 5 usos antes de romperse.",
+                        en: "Capacity upgrade for connectors. Increases the connector's storage space when applied with Shift + Right-click. Has 5 uses before breaking."
+                    },
+                    recipe: {
+                        pattern: [
+                            "DDD",
+                            "RCR",
+                            "DDD"
+                        ],
+                        key: {
+                            D: "diamond",
+                            R: "repeater",
+                            C: "indexer_connector_front"
+                        },
+                        result: "1 Connector Capacity Upgrade"
                     }
                 }
             ]
