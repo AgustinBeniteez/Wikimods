@@ -439,12 +439,108 @@ nav a.active::after {
 
 .mod-description {
     margin-bottom: 2rem;
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.05), rgba(255, 107, 53, 0.02));
+    border-left: 4px solid var(--accent-color);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mod-description p {
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    font-size: 1.05rem;
+}
+
+.mod-description strong {
+    color: var(--accent-color);
+    font-weight: 600;
 }
 
 .mod-description h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     color: var(--accent-color);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.mod-description h3::before {
+    content: "📋";
+    font-size: 1.2em;
+}
+
+/* Estilos mejorados para las características */
+.features-section {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    border: 1px solid rgba(255, 107, 53, 0.2);
+}
+
+.features-section h4 {
+    color: var(--accent-color);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.features-section h4::before {
+    content: "⭐";
+    font-size: 1.1em;
+}
+
+.features-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.features-section li {
+    background: rgba(255, 107, 53, 0.08);
+    margin-bottom: 0.8rem;
+    padding: 1rem 1.2rem;
+    border-radius: 8px;
+    border-left: 3px solid var(--accent-color);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.features-section li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--accent-color), rgba(255, 107, 53, 0.6));
+}
+
+.features-section li:hover {
+    background: rgba(255, 107, 53, 0.12);
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.2);
+}
+
+.features-section li strong {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+/* Animación sutil para los emojis */
+.features-section li:hover {
+    animation: subtle-pulse 0.6s ease-in-out;
+}
+
+@keyframes subtle-pulse {
+    0%, 100% { transform: translateX(5px) scale(1); }
+    50% { transform: translateX(5px) scale(1.02); }
 }
 
 .mod-gallery {
@@ -934,6 +1030,10 @@ footer p {
     background-color: var(--dark-surface);
     border-bottom: 2px solid var(--dark-surface-2);
     margin-bottom: 2rem;
+    position: sticky;
+    top: 70px; /* Altura aproximada del header */
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .mod-tabs {

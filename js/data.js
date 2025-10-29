@@ -10,8 +10,8 @@ const modsData = window.modsData = {
             author: "AgustinBenitez",
             repositoryUrl: "https://github.com/AgustinBeniteez/Indexer-mod",
             description: {
-                es: "Indexer es un mod para Minecraft 1.20.1 que te ayuda a organizar y gestionar tus items. Este sistema de automatización te permite filtrar y distribuir automáticamente el contenido de tus cofres/contenedores, eliminando la necesidad de clasificar manualmente tus recursos. Con Indexer, puedes depositar todos tus items en un punto central (DropBox) y el sistema se encargará de distribuirlos a los contenedores apropiados según los filtros que hayas configurado. El Controlador puede detectar conectores hasta 250 bloques de distancia, permitiéndote crear sistemas de almacenamiento masivos y complejos. Incluye 5 niveles de mejoras de velocidad (Básico 5x → Cobre 10x → Avanzado 20x → Élite 64x → Definitivo 256x), sistema de filtros avanzado con 7 tipos diferentes, compatibilidad con hornos, interfaz intuitiva renovada, y soporte multiidioma incluyendo español, inglés, catalán y valenciano.",
-                en: "Indexer is a mod for Minecraft 1.20.1 that helps you organize and manage your items. This automation system allows you to filter and automatically distribute the contents of your Chests/Containers, eliminating the need to manually sort your resources. With Indexer, you can deposit all your items in a central point (DropBox) and the system will take care of distributing them to the appropriate containers according to the filters you have configured. The Controller can detect connectors up to 250 blocks away, allowing you to create massive and complex storage systems. Features 5 speed upgrade levels (Basic 5x → Copper 10x → Advanced 20x → Elite 64x → Definitive 256x), advanced filter system with 7 different types, furnace compatibility, renovated intuitive interface, and multi-language support including Spanish, English, Catalan and Valencian."
+                es: "🔧 **Indexer** es la solución definitiva para la gestión automática de inventarios en Minecraft 1.20.1. Olvídate de perder tiempo organizando manualmente tus recursos y deja que este avanzado sistema de automatización haga el trabajo por ti.\n\n💡 **¿Cómo funciona?** Simplemente deposita todos tus items en el DropBox central y observa cómo el sistema los distribuye inteligentemente a los contenedores correctos según tus configuraciones. El potente Controlador Indexer puede detectar y gestionar conectores en un radio de hasta **250 bloques**, permitiéndote crear redes de almacenamiento masivas que se adaptan a cualquier base, desde la más simple hasta la más compleja.\n\n⚡ **Rendimiento escalable:** Con 5 niveles de mejoras de velocidad que van desde Básico (5x) hasta Definitivo (256x), tu sistema crecerá contigo. El sistema de filtros avanzado con 7 tipos diferentes te permite crear reglas de clasificación precisas y sofisticadas.\n\n🌍 **Experiencia global:** Interfaz completamente renovada con soporte multiidioma (español, inglés, catalán, valenciano) y compatibilidad total con hornos y otros contenedores especiales.",
+                en: "🔧 **Indexer** is the ultimate solution for automatic inventory management in Minecraft 1.20.1. Forget about wasting time manually organizing your resources and let this advanced automation system do the work for you.\n\n💡 **How it works?** Simply deposit all your items in the central DropBox and watch as the system intelligently distributes them to the correct containers according to your configurations. The powerful Indexer Controller can detect and manage connectors within a radius of up to **250 blocks**, allowing you to create massive storage networks that adapt to any base, from the simplest to the most complex.\n\n⚡ **Scalable performance:** With 5 speed upgrade levels ranging from Basic (5x) to Definitive (256x), your system will grow with you. The advanced filter system with 7 different types allows you to create precise and sophisticated sorting rules.\n\n🌍 **Global experience:** Completely renovated interface with multi-language support (Spanish, English, Catalan, Valencian) and full compatibility with furnaces and other special containers."
             },
             shortDescription: {
                 es: "Sistema de organización y gestión automática de items",
@@ -38,18 +38,22 @@ const modsData = window.modsData = {
             ],
             features: {
                 es: [
-                    "Controlador Indexer: El cerebro del sistema que detecta conectores hasta a 250 bloques de distancia",
-                    "Tubería Indexer: Conecta el controlador con los conectores formando la red de distribución",
-                    "Conector Indexer: Configurable con filtros específicos para determinar qué items aceptará",
-                    "DropBox: Contenedor especial donde depositas los items para clasificar",
-                    "Mejoras de velocidad para transferir más items por ciclo"
+                    "🧠 **Controlador Indexer:** El cerebro inteligente del sistema que detecta y gestiona conectores en un radio masivo de hasta 250 bloques",
+                    "🔗 **Tubería Indexer:** Red de conexión avanzada que forma la columna vertebral de tu sistema de distribución automática",
+                    "⚙️ **Conector Indexer:** Nodos configurables con sistema de filtros inteligente para clasificación precisa de items",
+                    "📦 **DropBox:** Contenedor central inteligente donde depositas todos tus recursos para clasificación automática instantánea",
+                    "⚡ **Sistema de Mejoras:** 5 niveles de velocidad escalables desde Básico (5x) hasta Definitivo (256x) para máximo rendimiento",
+                    "🔍 **Filtros Avanzados:** 7 tipos diferentes de filtros para crear reglas de clasificación sofisticadas y personalizadas",
+                    "🌐 **Interfaz Renovada:** UI completamente rediseñada con soporte multiidioma y estadísticas del sistema en tiempo real"
                 ],
                 en: [
-                    "Indexer Controller: The brain of the system that detects connectors up to 250 blocks away",
-                    "Indexer Pipe: Connects the controller with connectors forming the distribution network",
-                    "Indexer Connector: Configurable with specific filters to determine which items it will accept",
-                    "DropBox: Special container where you deposit items to be sorted",
-                    "Speed upgrades to transfer more items per cycle"
+                    "🧠 **Indexer Controller:** The intelligent brain of the system that detects and manages connectors within a massive 250-block radius",
+                    "🔗 **Indexer Pipe:** Advanced connection network that forms the backbone of your automatic distribution system",
+                    "⚙️ **Indexer Connector:** Configurable nodes with intelligent filter system for precise item classification",
+                    "📦 **DropBox:** Intelligent central container where you deposit all your resources for instant automatic sorting",
+                    "⚡ **Upgrade System:** 5 scalable speed levels from Basic (5x) to Definitive (256x) for maximum performance",
+                    "🔍 **Advanced Filters:** 7 different filter types to create sophisticated and personalized sorting rules",
+                    "🌐 **Renovated Interface:** Completely redesigned UI with multi-language support and real-time system statistics"
                 ]
             },
             changelog: `# Changelog — HotFix - Version 1.0.6.1

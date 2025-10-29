@@ -1,4 +1,27 @@
 // Función auxiliar para obtener cookies
+// Función para procesar formato básico de Markdown
+function processMarkdown(text) {
+    if (!text) return text;
+    
+    // Convertir **texto** a <strong>texto</strong>
+    text = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    
+    // Convertir saltos de línea \n\n a párrafos
+    text = text.replace(/\n\n/g, '</p><p>');
+    
+    // Si el texto no empieza con <p>, agregarlo
+    if (!text.startsWith('<p>')) {
+        text = '<p>' + text;
+    }
+    
+    // Si el texto no termina con </p>, agregarlo
+    if (!text.endsWith('</p>')) {
+        text = text + '</p>';
+    }
+    
+    return text;
+}
+
 function getCookie(name) {
     const value = `; ${document.cookie}`;
     const parts = value.split(`; ${name}=`);
@@ -285,12 +308,14 @@ function getTabContent(mod, activeTab, currentLang) {
             return `
                 <div class="mod-description">
                     <h3>${currentLang === 'es' ? 'Descripción' : 'Description'}</h3>
-                    <p>${description}</p>
+                    ${processMarkdown(description)}
                     
-                    <h4 style="margin-top: 1.5rem; margin-bottom: 0.5rem;">${currentLang === 'es' ? 'Características principales' : 'Main Features'}</h4>
-                    <ul style="padding-left: 1.5rem;">
-                        ${features.map(feature => `<li>${feature}</li>`).join('')}
-                    </ul>
+                    <div class="features-section">
+                        <h4>${currentLang === 'es' ? 'Características principales' : 'Main Features'}</h4>
+                        <ul>
+                            ${features.map(feature => `<li>${processMarkdown(feature)}</li>`).join('')}
+                        </ul>
+                    </div>
                 </div>
             `;
             
@@ -737,12 +762,14 @@ function renderOriginalModDetails(mod, currentLang) {
         <div class="mod-body">
             <div class="mod-description">
                 <h3>${descriptionTitle}</h3>
-                <p>${description}</p>
+                ${processMarkdown(description)}
                 
-                <h4 style="margin-top: 1.5rem; margin-bottom: 0.5rem;">${featuresTitle}</h4>
-                <ul style="padding-left: 1.5rem;">
-                    ${features.map(feature => `<li>${feature}</li>`).join('')}
-                </ul>
+                <div class="features-section">
+                    <h4>${featuresTitle}</h4>
+                    <ul>
+                        ${features.map(feature => `<li>${processMarkdown(feature)}</li>`).join('')}
+                    </ul>
+                </div>
             </div>
     `;
     
