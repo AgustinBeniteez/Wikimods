@@ -434,7 +434,7 @@ nav a.active::after {
 }
 
 .mod-body {
-    padding: 2rem;
+    padding: 0 23px 23px 23px;
 }
 
 .mod-description {
@@ -474,6 +474,105 @@ nav a.active::after {
 
 .gallery-item:hover {
     transform: scale(1.05);
+}
+
+/* Estilos para el changelog */
+.changelog-content {
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.changelog-content h1 {
+    font-size: 2rem;
+    margin: 2rem 0 1rem 0;
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+}
+
+.changelog-content h2 {
+    font-size: 1.5rem;
+    margin: 1.5rem 0 1rem 0;
+    color: var(--text-color);
+}
+
+.changelog-content h3 {
+    font-size: 1.25rem;
+    margin: 1.25rem 0 0.75rem 0;
+    color: var(--text-color);
+}
+
+.changelog-content h4 {
+    font-size: 1.1rem;
+    margin: 1rem 0 0.5rem 0;
+    color: var(--text-color);
+}
+
+.changelog-content p {
+    margin-bottom: 1rem;
+    color: var(--text-color-secondary);
+}
+
+.changelog-content ul {
+    margin: 1rem 0;
+    padding-left: 2rem;
+}
+
+.changelog-content li {
+    margin-bottom: 0.5rem;
+    color: var(--text-color-secondary);
+}
+
+.changelog-content strong {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.changelog-content em {
+    font-style: italic;
+    color: var(--text-color);
+}
+
+.changelog-content code {
+    background-color: var(--dark-surface-3);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    color: var(--accent-color);
+}
+
+.changelog-content a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.changelog-content a:hover {
+    text-decoration: underline;
+    color: #ff7849;
+}
+
+.changelog-content hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-color), transparent);
+    margin: 2rem 0;
+}
+
+.changelog-content .changelog-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    margin: 1rem 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.changelog-content .changelog-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
 
 /* Estilos para la sección de ítems del mod */
@@ -827,5 +926,234 @@ footer p {
     .current-language {
         font-size: 0.9rem;
         padding: 3px 8px;
+    }
+}
+
+/* Estilos para pestañas de Minecraft */
+.mod-navigation {
+    background-color: var(--dark-surface);
+    border-bottom: 2px solid var(--dark-surface-2);
+    margin-bottom: 2rem;
+}
+
+.mod-tabs {
+    display: flex;
+    gap: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.tab-button {
+    background: none;
+    border: none;
+    color: var(--dark-text-secondary);
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    border-bottom: 3px solid transparent;
+    position: relative;
+}
+
+.tab-button:hover {
+    color: var(--dark-text);
+    background-color: var(--dark-surface-2);
+}
+
+.tab-button.active {
+    color: var(--accent-color);
+    border-bottom-color: var(--accent-color);
+    background-color: var(--dark-surface-2);
+}
+
+/* Botones de descarga mejorados */
+.download-buttons {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    margin-bottom: 0;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: flex-start;
+    flex-direction: row;
+}
+
+.download-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+    border: 2px solid transparent;
+    white-space: nowrap;
+    justify-content: space-between;
+    min-width: 140px;
+}
+
+.download-button .platform-icon {
+    width: 18px;
+    height: 18px;
+    filter: brightness(0) invert(1);
+    flex-shrink: 0;
+    order: 1;
+}
+
+.download-button span {
+    flex-grow: 1;
+    text-align: center;
+    order: 2;
+}
+
+.download-button .download-icon {
+    flex-shrink: 0;
+    order: 3;
+    font-size: 14px;
+}
+
+.download-button.curseforge {
+    background-color: #f16436;
+    color: white;
+}
+
+.download-button.curseforge:hover {
+    background-color: #d54d2a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(241, 100, 54, 0.3);
+}
+
+.download-button.modrinth {
+    background-color: #1bd96a;
+    color: white;
+}
+
+.download-button.modrinth:hover {
+    background-color: #17b85a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(27, 217, 106, 0.3);
+}
+
+.download-button.github {
+    background-color: #24292e;
+    color: white;
+}
+
+.download-button.github:hover {
+    background-color: #1b1f23;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(36, 41, 46, 0.3);
+}
+
+.download-button.github .platform-icon {
+    font-size: 18px;
+    filter: none;
+}
+
+/* Contenido de pestañas */
+.tab-content {
+    min-height: 300px;
+    animation: fadeIn 0.3s ease-in-out;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.no-content {
+    text-align: center;
+    padding: 2rem;
+    color: var(--dark-text-secondary);
+    margin-bottom: 0;
+}
+
+.no-content p {
+    font-size: 1.1rem;
+    margin-bottom: 0;
+}
+
+/* Mejoras para la cabecera del mod */
+.mod-header-main {
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+    flex-direction: column;
+}
+
+.mod-info-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.mod-download-section {
+    flex-shrink: 0;
+    display: flex;
+    align-items: flex-start;
+}
+
+.mod-download-section .download-buttons {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.mod-header-content h2 {
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive para pestañas */
+@media (max-width: 768px) {
+    .mod-header-main {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: stretch;
+    }
+    
+    .mod-download-section {
+        align-self: center;
+    }
+    
+    .mod-tabs {
+        flex-wrap: wrap;
+        padding: 0 10px;
+    }
+    
+    .tab-button {
+        padding: 0.75rem 1rem;
+        font-size: 0.9rem;
+        flex: 1;
+        min-width: 120px;
+    }
+    
+    .download-buttons {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .download-button {
+        min-width: 120px;
+        justify-content: center;
+        padding: 0.75rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .tab-button {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.8rem;
+        min-width: 100px;
     }
 }

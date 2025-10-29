@@ -125,4 +125,29 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     }
+    
+    // Escuchar cambios de idioma para actualizar el contenido
+    window.addEventListener('languageChanged', function(event) {
+        // Recargar las tarjetas de mods con el nuevo idioma
+        if (minecraftModsContainer && window.modsData && window.modsData.minecraft) {
+            minecraftModsContainer.innerHTML = '';
+            window.modsData.minecraft.forEach(mod => {
+                minecraftModsContainer.appendChild(createModCard(mod));
+            });
+        }
+        
+        if (sims4ModsContainer && window.modsData && window.modsData.sims4) {
+            sims4ModsContainer.innerHTML = '';
+            window.modsData.sims4.forEach(mod => {
+                sims4ModsContainer.appendChild(createModCard(mod));
+            });
+        }
+        
+        // Actualizar placeholder del buscador si existe
+        const searchInput = document.getElementById('mod-search');
+        if (searchInput) {
+            const currentLang = event.detail.language;
+            searchInput.placeholder = currentLang === 'es' ? 'Buscar mods...' : 'Search mods...';
+        }
+    });
 });

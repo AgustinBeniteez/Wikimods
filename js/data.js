@@ -18,6 +18,7 @@ const modsData = window.modsData = {
                 en: "Automatic item organization and management system"
             },
             curseForgeUrl: "https://www.curseforge.com/minecraft/mc-mods/indexer",
+            modrinthUrl: "https://modrinth.com/mod/indexer",
             downloadCount: "34K",
             creationDate: "Jul 6, 2025",
             mainImage: "https://media.forgecdn.net/attachments/description/1301365/description_ebef8487-441d-4a30-8cbb-377951845cb9.png",
@@ -47,6 +48,213 @@ const modsData = window.modsData = {
                     "Speed upgrades to transfer more items per cycle"
                 ]
             },
+            changelog: `# Changelog — HotFix - Version 1.0.6.1
+
+## Fixes
+
+* **Fixed server-side error with [@OnlyIn](https://github.com/OnlyIn) (Dist.CLIENT)**  
+  Resolved a crash caused by client-only code being executed on the server.
+
+* **Fixed furnace item extraction issue:**  
+  If the extractor is connected but the output item cannot enter the destination inventory, it will now remain inside the furnace instead of disappearing.
+
+_(All following changes belong to Version 1.0.6)_
+
+---
+
+# Changelog — Version 1.0.6
+
+## Fixes
+
+* **Connector Filter Items:**  
+  If an item is placed in an intermediate slot (not the first or immediately after an occupied one), and the previous slot is empty, the system will automatically move the item to the nearest available empty slot starting from the first.
+
+---
+
+## Dropbox
+
+* **New Button:**  
+  Added a button to move all items from your inventory to the Dropbox.
+
+* **New Dropbox UI:**
+  * Displays system stats on the right side of the inventory:
+  * Used capacity
+  * Upgrade level
+  * New button to transfer all items to the Dropbox.
+  * New interface image included.
+
+![New Dropbox UI](https://github.com/user-attachments/assets/974adcf3-c071-44f8-850a-8d750600abee)
+
+---
+
+## System Improvements
+
+* **New Textures:**  
+  Added new textures for the transfer speed upgrade.
+  * \`transfer_speed_upgrade_copper\`
+  * \`transfer_speed_upgrade_definitive\`
+
+* **New Progression:**  
+  Basic → Copper → Advanced → Elite → Definitive
+  * Speeds: 5x → 10x → 20x → 64x → 256x
+
+* **Upgrade Persistence:**  
+  The upgrade state is now saved in the Indexer Controller.
+
+---
+
+## Interfaces
+
+### Indexer Controller UI
+
+* New interface design.
+* Added a view of all containers connected to the system.
+* New system stats:
+  * Used capacity
+  * Dropbox connection status
+  * Upgrade level
+* New interface image included.
+
+![Indexer Controller UI](https://github.com/user-attachments/assets/b5ff1371-8b1e-49bf-a463-5065489b33d2)
+
+---
+
+## New Items: Filters
+
+![Filters Overview](https://github.com/user-attachments/assets/27e95109-9dc6-4ec9-ae8b-0da4b5036dbc)
+
+A new "attribute filter" system has been implemented, allowing items to be filtered not only by exact match but also by attributes, tags, or NBT properties.
+
+### List of Filters:
+
+* **Base Filter**  
+  Core component used for crafting other filters.
+
+* **Name Filter**  
+  Filters items by exact name.  
+  (Right-click to set the target name.)
+
+* **Attribute Filter**  
+  Filters by attributes such as enchantments.  
+  (Right-click to set the attribute.)
+
+* **Custom Tag Blocker**  
+  Blocks items by ID or tag.  
+  (Right-click to set the tag or item to block.)
+
+* **Food Filter**  
+  Allows only edible items.
+
+* **Fuel Filter**  
+  Allows only fuel items (e.g., coal, lava bucket).
+
+* **Tools Filter**  
+  Allows only tools (pickaxes, axes, shovels, hoes, and swords).
+
+Check the in-game recipe book for detailed crafting patterns.
+
+---
+
+## Languages
+
+* Added new languages:
+  * Catalan (ca_es)
+  * Valencian (ca_valencia)
+
+---
+
+## Blocks and Mining
+
+* Added mining tags (\`mineable/pickaxe\`) so mod blocks can be broken faster using a pickaxe.
+
+---
+
+## Connector Improvements
+
+* Added a new upgrade for the connector.
+* Now has more space when applying with Shift + Right-click.
+* Has 5 uses before breaking.
+* New image included.
+
+![Connector Improvements](https://github.com/user-attachments/assets/3af6ae68-e475-4743-bf42-3803599f05f7)
+
+---
+
+## Mod Manual
+
+* **Manual Update:**  
+  A new **navigation menu** has been added with three main sections:
+  * **Crafting Recipes:**  
+    Allows you to search any mod item and view its crafting recipe individually.
+  * **Tutorial:**  
+    Explains each part of the mod in detail, including its function and progression.
+  * **Wiki:**  
+    Direct link to the official mod website for more information and updates.
+
+![Mod Manual Navigation](https://github.com/user-attachments/assets/00ff8158-c63e-44ad-8c2d-7955b8e64d3e)
+
+---
+
+# Patch Notes - Version 1.0.5
+
+## Fixes
+
+* Fixed an issue where mod blocks would drop in Creative Mode.  
+  They now only drop in Survival Mode, as intended.
+
+## Filtering Improvements
+
+* Added the ability to filter more item types.
+
+## UI Improvements
+
+* General UI update.
+* Added new block: **UI Controller**.
+* Added new block: **UI Connector**.
+
+![UI Improvements](https://media.forgecdn.net/attachments/1301365/changelog/changelog_94cc0454-5994-41dc-94c7-b49982a618a7.png)
+
+## Language Support
+
+Added support for multiple languages:
+
+### Spanish
+
+* \`es_es\` (Spain)
+* \`es_ar\` (Argentina)
+* \`es_mx\` (Mexico)
+* \`es_cl\` (Chile)
+* \`es_co\` (Colombia)
+* \`es_pe\` (Peru)
+* \`es_ve\` (Venezuela)
+* \`es_uy\` (Uruguay)
+* \`es_andaluz\` (Andalusia)
+
+### English
+
+* \`en_us\` (United States)
+* \`en_gb\` (United Kingdom)
+* \`en_ca\` (Canada)
+* \`en_au\` (Australia)
+
+### Chinese
+
+* \`zh_cn\` (Simplified Chinese)
+
+## Upgrade Balancing
+
+* **Elite Upgrade**: Increased capacity from **+20** to **+64**.
+* **Advanced Upgrade**: Increased capacity from **+10** to **+20**.
+* **Basic Upgrade**: Increased capacity from **+4** to **+5**.
+
+## Optimization 📂
+
+* Optimization and reduction of image sizes.
+* Overall mod size reduced from **903.6 KB** to **529.04 KB**.
+
+---
+
+Update created by **AgustínBenitez** — 10/10/2025`,
             items: [
                 {
                     name: "Indexer Controller",

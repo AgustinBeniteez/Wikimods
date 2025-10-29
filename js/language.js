@@ -246,6 +246,11 @@ const translations = {
                 }
             }
         }
+        
+        // Disparar evento personalizado para notificar cambio de idioma
+        window.dispatchEvent(new CustomEvent('languageChanged', { 
+            detail: { language: currentLanguage } 
+        }));
     }
     
     // Update language selector to show current language
