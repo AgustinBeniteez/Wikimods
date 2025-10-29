@@ -21,16 +21,20 @@ const modsData = window.modsData = {
             modrinthUrl: "https://modrinth.com/mod/indexer",
             downloadCount: "34K",
             creationDate: "Jul 6, 2025",
-            mainImage: "https://media.forgecdn.net/attachments/description/1301365/description_ebef8487-441d-4a30-8cbb-377951845cb9.png",
+            mainImage: "../img/minecraft/indexer_gallery/manual1.png",
             gallery: [
-                "https://media.forgecdn.net/attachments/description/1301365/description_ebef8487-441d-4a30-8cbb-377951845cb9.png",
-                "https://media.forgecdn.net/attachments/description/1301365/description_d40c441a-a58c-4d5c-95c9-3c15f3ec2103.png",
-                "https://media.forgecdn.net/attachments/description/1301365/description_04049f06-8ea9-44be-907c-4bd27f4206a2.png",
-                "https://media.forgecdn.net/attachments/description/1301365/description_4e87e266-8fe0-4bb6-9d2b-e75cfc8876c8.png",
-                "https://media.forgecdn.net/attachments/description/1301365/description_c0a9d64b-e47c-488d-9a86-13ac4e230701.png",
-                "https://media.forgecdn.net/attachments/description/1301365/description_84d6d099-80ae-49c7-8586-341e21f846bc.png",
-                "https://media.forgecdn.net/attachments/description/1301365/description_6f0bc766-4682-452c-b331-13b5872e7b48.png",
-                "https://media.forgecdn.net/attachments/description/1301365/description_803eb2df-1b1a-411f-b822-fd212bc4dbf5.png"
+                "../img/minecraft/indexer_gallery/manual1.png",
+                "../img/minecraft/indexer_gallery/manual2.png",
+                "../img/minecraft/indexer_gallery/manual3.png",
+                "../img/minecraft/indexer_gallery/manual4.png",
+                "../img/minecraft/indexer_gallery/manual5.png",
+                "../img/minecraft/indexer_gallery/manual6.png",
+                "../img/minecraft/indexer_gallery/manual7.png",
+                "../img/minecraft/indexer_gallery/manual8.png",
+                "../img/minecraft/indexer_gallery/manual9.png",
+                "../img/minecraft/indexer_gallery/manual10.png",
+                "../img/minecraft/indexer_gallery/manual11.png",
+                "../img/minecraft/indexer_gallery/manual12.png"
             ],
             features: {
                 es: [
