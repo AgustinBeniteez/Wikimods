@@ -21,7 +21,7 @@ const modsData = window.modsData = {
             modrinthUrl: "https://modrinth.com/mod/indexer",
             downloadCount: "34K",
             creationDate: "Jul 6, 2025",
-            mainImage: "../img/minecraft/indexer_gallery/manual1.png",
+            mainImage: "https://agustinbeniteez.github.io/Wikimods/img/minecraft/indexer_gallery/manual1.png",
             gallery: [
                 "../img/minecraft/indexer_gallery/manual1.png",
                 "../img/minecraft/indexer_gallery/manual2.png",
