@@ -10,8 +10,8 @@ const modsData = window.modsData = {
             author: "AgustinBenitez",
             repositoryUrl: "https://github.com/AgustinBeniteez/Indexer-mod",
             description: {
-                es: "Indexer es un mod que te ayuda a organizar y gestionar tus items. Este sistema de automatización te permite filtrar y distribuir automáticamente el contenido de tus cofres/contenedores, eliminando la necesidad de clasificar manualmente tus recursos. Con Indexer, puedes depositar todos tus items en un punto central y el sistema se encargará de distribuirlos a los contenedores apropiados según los filtros que hayas configurado, ahorrándote tiempo y manteniendo tu base perfectamente organizada.",
-                en: "Indexer is a mod that helps you organize and manage your items. This automation system allows you to filter and automatically distribute the contents of your Chests/Containers, eliminating the need to manually sort your resources. With Indexer, you can deposit all your items at a central point and the system will take care of distributing them to the appropriate containers according to the filters you have configured, saving you time and keeping your base perfectly organized!"
+                es: "Indexer es un mod para Minecraft 1.20.1 que te ayuda a organizar y gestionar tus items. Este sistema de automatización te permite filtrar y distribuir automáticamente el contenido de tus cofres/contenedores, eliminando la necesidad de clasificar manualmente tus recursos. Con Indexer, puedes depositar todos tus items en un punto central (DropBox) y el sistema se encargará de distribuirlos a los contenedores apropiados según los filtros que hayas configurado. El Controlador puede detectar conectores hasta 250 bloques de distancia, permitiéndote crear sistemas de almacenamiento masivos y complejos. Incluye 5 niveles de mejoras de velocidad (Básico 5x → Cobre 10x → Avanzado 20x → Élite 64x → Definitivo 256x), sistema de filtros avanzado con 7 tipos diferentes, compatibilidad con hornos, interfaz intuitiva renovada, y soporte multiidioma incluyendo español, inglés, catalán y valenciano.",
+                en: "Indexer is a mod for Minecraft 1.20.1 that helps you organize and manage your items. This automation system allows you to filter and automatically distribute the contents of your Chests/Containers, eliminating the need to manually sort your resources. With Indexer, you can deposit all your items in a central point (DropBox) and the system will take care of distributing them to the appropriate containers according to the filters you have configured. The Controller can detect connectors up to 250 blocks away, allowing you to create massive and complex storage systems. Features 5 speed upgrade levels (Basic 5x → Copper 10x → Advanced 20x → Elite 64x → Definitive 256x), advanced filter system with 7 different types, furnace compatibility, renovated intuitive interface, and multi-language support including Spanish, English, Catalan and Valencian."
             },
             shortDescription: {
                 es: "Sistema de organización y gestión automática de items",
@@ -260,8 +260,8 @@ Update created by **AgustínBenitez** — 10/10/2025`,
                     name: "Indexer Controller",
                     image: "../img/minecraft/item/indexer_controller_top.png",
                     description: {
-                        es: "El componente principal para controlar el sistema de crafteo automático.",
-                        en: "The main component to control the automatic crafting system."
+                        es: "El cerebro de todo el sistema. Coloca este bloque en el centro de tu red de almacenamiento y conéctalo a un DropBox donde depositarás los items que quieres clasificar. El Controlador puede detectar conectores hasta 250 bloques de distancia.",
+                        en: "The brain of the entire system. Place this block at the center of your storage network and connect it to a DropBox where you'll deposit the items you want to sort. The Controller can detect connectors up to 250 blocks away."
                     },
                     recipe: {
                         pattern: [
@@ -278,11 +278,11 @@ Update created by **AgustínBenitez** — 10/10/2025`,
                     }
                 },
                 {
-                    name: "Conector Indexer",
+                    name: "Indexer Connector",
                     image: "../img/minecraft/item/indexer_connector_front.png",
                     description: {
-                        es: "Conector que permite la interacción entre componentes del sistema Indexer para la clasificación automática de items.",
-                        en: "Connector that allows interaction between Indexer system components for automatic item sorting."
+                        es: "Coloca estos bloques junto a tus cofres, barriles, hornos u otros contenedores. Cada Conector puede configurarse con un filtro específico para determinar qué items aceptará.",
+                        en: "Place these blocks next to your chests, barrels, furnaces, or other containers. Each Connector can be configured with a specific filter to determine which items it will accept."
                     },
                     recipe: {
                         pattern: [
@@ -303,14 +303,14 @@ Update created by **AgustínBenitez** — 10/10/2025`,
                     name: "Indexer Pipes",
                     image: "../img/minecraft/item/indexer_pipeitem.png",
                     description: {
-                        es: "Tuberías que transportan los items entre los componentes del sistema.",
-                        en: "Pipes that transport items between system components."
+                        es: "Estos bloques conectan el Controlador Indexer con los Conectores Indexer, formando la red de distribución. Son fáciles de craftear y rinden 10 unidades por receta.",
+                        en: "These blocks connect the Indexer Controller with the Indexer Connectors, forming the distribution network. They are easy to craft and yield 10 units per recipe."
                     },
                     recipe: {
                         pattern: [
-                            "II",
-                            "  ",
-                            "  "
+                            "II ",
+                            "   ",
+                            "   "
                         ],
                         key: {
                             I: "iron_ingot"
@@ -322,8 +322,8 @@ Update created by **AgustínBenitez** — 10/10/2025`,
                     name: "DropBox",
                     image: "../img/minecraft/item/drop_box.png",
                     description: {
-                        es: "Contenedor especial donde depositas los items para clasificar.",
-                        en: "Special container where you deposit items to be sorted."
+                        es: "Un contenedor especial con 54 slots (el doble que un cofre normal) donde puedes depositar todos los items que quieres clasificar. Incluye nueva interfaz con estadísticas del sistema y botón para transferir todos los items del inventario.",
+                        en: "A special container with 54 slots (double that of a normal chest) where you can deposit all the items you want to sort. Features new interface with system statistics and button to transfer all items from inventory."
                     },
                     recipe: {
                         pattern: [
@@ -344,8 +344,8 @@ Update created by **AgustínBenitez** — 10/10/2025`,
                     name: "Transfer Speed Upgrade Basic",
                     image: "../img/minecraft/item/transfer_speed_upgrade_basic.png",
                     description: {
-                        es: "Aumenta la velocidad de transferencia de items por ciclo x4.",
-                        en: "Increases the transfer speed of items per cycle x4."
+                        es: "Mejora básica de velocidad 5x. Crafteo: lingotes de oro en las esquinas, polvo de redstone en los slots restantes, y un Controlador Indexer en el centro. Transfiere hasta 4 items por ciclo.",
+                        en: "Basic speed upgrade 5x. Crafting: gold ingots in the corners, redstone dust in the remaining slots, and an Indexer Controller in the center. Transfers up to 4 items per cycle."
                     },
                     recipe: {
                         pattern: [
@@ -362,21 +362,41 @@ Update created by **AgustínBenitez** — 10/10/2025`,
                     }
                 },
                 {
+                    name: "Transfer Speed Upgrade Copper",
+                    image: "../img/minecraft/item/transfer_speed_upgrade_copper.png",
+                    description: {
+                        es: "Mejora de cobre 10x. Crafteo: rodea la mejora básica con lingotes de cobre.",
+                        en: "Copper upgrade 10x. Crafting: surround the Basic upgrade with copper ingots."
+                    },
+                    recipe: {
+                        pattern: [
+                            "CCC",
+                            "CBC",
+                            "CCC"
+                        ],
+                        key: {
+                            C: "copper_ingot",
+                            B: "transfer_speed_upgrade_basic"
+                        },
+                        result: "1 Transfer Speed Upgrade Copper"
+                    }
+                },
+                {
                     name: "Transfer Speed Upgrade Advanced",
                     image: "../img/minecraft/item/transfer_speed_upgrade_advanced.png",
                     description: {
-                        es: "Filtro avanzado con mayor capacidad x10.",
-                        en: "Advanced filter with greater capacity x10."
+                        es: "Mejora avanzada 20x. Crafteo: rodea la mejora de cobre con diamantes. Transfiere hasta 16 items por ciclo.",
+                        en: "Advanced upgrade 20x. Crafting: surround the Copper upgrade with diamonds. Transfers up to 16 items per cycle."
                     },
                     recipe: {
                         pattern: [
                             "DDD",
-                            "DBD",
+                            "DCD",
                             "DDD"
                         ],
                         key: {
                             D: "diamond",
-                            B: "transfer_speed_upgrade_basic"
+                            C: "transfer_speed_upgrade_copper"
                         },
                         result: "1 Transfer Speed Upgrade Advanced"
                     }
@@ -385,8 +405,8 @@ Update created by **AgustínBenitez** — 10/10/2025`,
                     name: "Transfer Speed Upgrade Elite",
                     image: "../img/minecraft/item/transfer_speed_upgrade_elite.png",
                     description: {
-                        es: "Filtro Elite con mayor capacidad x20..",
-                        en: "Elite filter with greater capacity x20."
+                        es: "Mejora élite 64x. Crafteo: rodea la mejora avanzada con Netherite Scrap.",
+                        en: "Elite upgrade 64x. Crafting: surround the Advanced upgrade with Netherite Scrap."
                     },
                     recipe: {
                         pattern: [
@@ -395,10 +415,171 @@ Update created by **AgustínBenitez** — 10/10/2025`,
                             "NNN"
                         ],
                         key: {
-                            N: "netherite_ingot",
+                            N: "netherite_scrap",
                             A: "transfer_speed_upgrade_advanced"
                         },
                         result: "1 Transfer Speed Upgrade Elite"
+                    }
+                },
+                {
+                    name: "Transfer Speed Upgrade Definitive",
+                    image: "../img/minecraft/item/transfer_speed_upgrade_definitive.png",
+                    description: {
+                        es: "Mejora definitiva 256x. Nivel final. Consulta el libro de recetas en el juego si tu pack incluye su receta.",
+                        en: "Definitive upgrade 256x. Final tier. Check the in-game recipe book if your pack includes its recipe."
+                    },
+                    recipe: {
+                        pattern: [
+                            "???",
+                            "?E?",
+                            "???"
+                        ],
+                        key: {
+                            "?": "unknown",
+                            E: "transfer_speed_upgrade_elite"
+                        },
+                        result: "1 Transfer Speed Upgrade Definitive"
+                    }
+                },
+                {
+                    name: "Base Filter",
+                    image: "../img/minecraft/item/base_filter.png",
+                    description: {
+                        es: "Componente base usado para craftear otros filtros.",
+                        en: "Core component used for crafting other filters."
+                    },
+                    recipe: {
+                        pattern: [
+                            "IPI",
+                            "PRP",
+                            "IPI"
+                        ],
+                        key: {
+                            I: "iron_ingot",
+                            P: "paper",
+                            R: "redstone"
+                        },
+                        result: "1 Base Filter"
+                    }
+                },
+                {
+                    name: "Name Filter",
+                    image: "../img/minecraft/item/name_filter.png",
+                    description: {
+                        es: "Filtra items por nombre exacto. Haz clic derecho para establecer el nombre objetivo.",
+                        en: "Filters items by exact custom name. Right-click to set the target name."
+                    },
+                    recipe: {
+                        pattern: [
+                            " N ",
+                            "NBN",
+                            " N "
+                        ],
+                        key: {
+                            N: "name_tag",
+                            B: "base_filter"
+                        },
+                        result: "1 Name Filter"
+                    }
+                },
+                {
+                    name: "Attribute Filter",
+                    image: "../img/minecraft/item/attribute_filter.png",
+                    description: {
+                        es: "Filtra por atributos como encantamientos. Haz clic derecho para establecer el atributo.",
+                        en: "Filters by attributes like enchantments. Right-click to set the attribute."
+                    },
+                    recipe: {
+                        pattern: [
+                            " E ",
+                            "EBE",
+                            " E "
+                        ],
+                        key: {
+                            E: "enchanted_book",
+                            B: "base_filter"
+                        },
+                        result: "1 Attribute Filter"
+                    }
+                },
+                {
+                    name: "Custom Tag Blocker",
+                    image: "../img/minecraft/item/custom_tag_blocker.png",
+                    description: {
+                        es: "Bloquea items por ID/tag. Haz clic derecho para establecer el item/tag a bloquear.",
+                        en: "Blocks items by ID/tag. Right-click to set the item/tag to block."
+                    },
+                    recipe: {
+                        pattern: [
+                            " B ",
+                            "BBB",
+                            " B "
+                        ],
+                        key: {
+                            B: "barrier",
+                            B: "base_filter"
+                        },
+                        result: "1 Custom Tag Blocker"
+                    }
+                },
+                {
+                    name: "Food Filter",
+                    image: "../img/minecraft/item/food_filter.png",
+                    description: {
+                        es: "Permite solo items comestibles.",
+                        en: "Allows only edible items."
+                    },
+                    recipe: {
+                        pattern: [
+                            " A ",
+                            "ABA",
+                            " A "
+                        ],
+                        key: {
+                            A: "apple",
+                            B: "base_filter"
+                        },
+                        result: "1 Food Filter"
+                    }
+                },
+                {
+                    name: "Fuel Filter",
+                    image: "../img/minecraft/item/fuel_filter.png",
+                    description: {
+                        es: "Permite solo items de combustible (ej: carbón, carbón vegetal, cubo de lava en hornos).",
+                        en: "Allows only fuel items (e.g., coal, charcoal, lava bucket in furnaces)."
+                    },
+                    recipe: {
+                        pattern: [
+                            " C ",
+                            "CBC",
+                            " C "
+                        ],
+                        key: {
+                            C: "coal",
+                            B: "base_filter"
+                        },
+                        result: "1 Fuel Filter"
+                    }
+                },
+                {
+                    name: "Tools Filter",
+                    image: "../img/minecraft/item/tools_filter.png",
+                    description: {
+                        es: "Permite solo herramientas: picos, hachas, palas, azadas y espadas.",
+                        en: "Allows only tools: pickaxes, axes, shovels, hoes, and swords."
+                    },
+                    recipe: {
+                        pattern: [
+                            " P ",
+                            "PBP",
+                            " P "
+                        ],
+                        key: {
+                            P: "iron_pickaxe",
+                            B: "base_filter"
+                        },
+                        result: "1 Tools Filter"
                     }
                 },
                 {
@@ -428,14 +609,14 @@ Update created by **AgustínBenitez** — 10/10/2025`,
                     name: "Indexer Manual",
                     image: "../img/minecraft/item/indexer_manual.png",
                     description: {
-                        es: "Guía completa sobre cómo configurar y utilizar el sistema Indexer para la organización automática de items.",
-                        en: "Complete guide on how to set up and use the Indexer system for automatic item organization."
+                        es: "Guía completa con nuevo menú de navegación con tres secciones principales: Recetas de Crafteo, Tutorial y Wiki. Permite buscar cualquier item del mod y ver su receta individualmente.",
+                        en: "Complete guide with new navigation menu with three main sections: Crafting Recipes, Tutorial and Wiki. Allows you to search any mod item and view its crafting recipe individually."
                     },
                     recipe: {
                         pattern: [
-                            "BC",
-                            "P",
-                            ""
+                            "BC ",
+                            "P  ",
+                            "   "
                         ],
                         key: {
                             C: "chest",

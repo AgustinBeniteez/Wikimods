@@ -1,0 +1,16 @@
+<svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+  <rect width="16" height="16" fill="#2d2d2d"/>
+  <rect x="2" y="2" width="12" height="12" fill="#8b4513"/>
+  <rect x="3" y="3" width="10" height="10" fill="#a0522d"/>
+  <rect x="4" y="4" width="8" height="8" fill="#cd853f"/>
+  <rect x="5" y="5" width="6" height="6" fill="#daa520"/>
+  <rect x="6" y="6" width="4" height="4" fill="#f4a460"/>
+  <rect x="7" y="7" width="2" height="2" fill="#ffe4b5"/>
+  <!-- Símbolo de comida (manzana pixelada) -->
+  <rect x="6" y="5" width="4" height="1" fill="#ff0000"/>
+  <rect x="5" y="6" width="6" height="1" fill="#ff0000"/>
+  <rect x="5" y="7" width="6" height="1" fill="#ff4500"/>
+  <rect x="6" y="8" width="4" height="1" fill="#ff6347"/>
+  <rect x="7" y="9" width="2" height="1" fill="#ff7f50"/>
+  <rect x="8" y="4" width="1" height="1" fill="#228b22"/>
+</svg>
