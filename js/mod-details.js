@@ -325,6 +325,7 @@ function getCraftsContent(mod, currentLang) {
     const recipeTitle = currentLang === 'es' ? 'Receta de Crafteo' : 'Crafting Recipe';
     const ingredientsTitle = currentLang === 'es' ? 'Ingredientes' : 'Ingredients';
     const resultTitle = currentLang === 'es' ? 'Resultado' : 'Result';
+    const searchPlaceholder = currentLang === 'es' ? 'Buscar crafteos...' : 'Search crafts...';
     
     // Función para normalizar nombres de ingredientes a nombres de archivos
     function normalizeIngredientName(name) {
@@ -393,7 +394,11 @@ function getCraftsContent(mod, currentLang) {
     let craftsHTML = `
         <div class="mod-items">
             <h3>${itemsTitle}</h3>
-            <div class="items-grid">
+            <div class="crafts-search-container">
+                <input type="text" id="crafts-search" placeholder="${searchPlaceholder}" class="crafts-search-input">
+                <button id="crafts-search-btn" class="crafts-search-btn"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="items-grid" id="crafts-items-grid">
     `;
     
     mod.items.forEach(item => {
@@ -688,6 +693,14 @@ function initializeTabContent(tab) {
     // Configurar imágenes del changelog si estamos en esa pestaña
     if (tab === 'changelog') {
         setupChangelogImages();
+    }
+    
+    // Inicializar búsqueda de crafteos si estamos en esa pestaña
+    if (tab === 'crafts') {
+        console.log('Inicializando filtro de crafteos desde initializeTabContent');
+        setTimeout(() => {
+            initializeCraftsSearch();
+        }, 200);
     }
 }
 
@@ -1519,4 +1532,241 @@ window.addEventListener('languageChanged', function(event) {
             window.renderModDetails(mod, activeTab);
         }
     }
+});
+
+// Función para filtrar crafteos por nombre
+function filterCrafts(searchTerm) {
+    console.log('filterCrafts llamada con término:', searchTerm);
+    
+    const itemsGrid = document.getElementById('crafts-items-grid');
+    console.log('Items grid encontrado:', itemsGrid);
+    
+    if (!itemsGrid) return;
+    
+    const items = Array.from(itemsGrid.querySelectorAll('.item-card'));
+    console.log('Items encontrados:', items.length);
+    
+    const normalizedSearch = searchTerm.toLowerCase().trim();
+    console.log('Término normalizado:', normalizedSearch);
+    
+    if (normalizedSearch === '') {
+        // Si no hay término de búsqueda, mostrar todos en orden original
+        items.forEach(item => {
+            item.style.display = 'block';
+            item.style.order = '0';
+        });
+        showNoResultsMessage(items.length, normalizedSearch);
+        return;
+    }
+    
+    // Calcular puntuación de relevancia para cada item
+    const itemsWithScore = items.map(item => {
+        let score = 0;
+        let shouldShow = false;
+        
+        // Buscar en el nombre del item (mayor peso) - usar h4 dentro de .item-info
+        const itemNameElement = item.querySelector('.item-info h4');
+        if (itemNameElement) {
+            const name = itemNameElement.textContent.toLowerCase();
+            if (name.includes(normalizedSearch)) {
+                shouldShow = true;
+                // Coincidencia exacta tiene mayor puntuación
+                if (name === normalizedSearch) {
+                    score += 100;
+                } else if (name.startsWith(normalizedSearch)) {
+                    score += 80;
+                } else if (name.endsWith(normalizedSearch)) {
+                    score += 60;
+                } else {
+                    score += 40;
+                }
+                
+                // Bonus por longitud de coincidencia
+                const matchLength = normalizedSearch.length / name.length;
+                score += matchLength * 20;
+            }
+        }
+        
+        // Buscar en la descripción (peso medio) - usar p dentro de .item-info
+        const itemDescriptionElement = item.querySelector('.item-info p');
+        if (itemDescriptionElement) {
+            const description = itemDescriptionElement.textContent.toLowerCase();
+            if (description.includes(normalizedSearch)) {
+                shouldShow = true;
+                if (description.startsWith(normalizedSearch)) {
+                    score += 30;
+                } else {
+                    score += 15;
+                }
+            }
+        }
+        
+        // Buscar en los ingredientes de la receta (menor peso)
+        const ingredients = item.querySelectorAll('.recipe-key ul li');
+        let ingredientMatches = 0;
+        ingredients.forEach(ingredient => {
+            const ingredientText = ingredient.textContent.toLowerCase();
+            if (ingredientText.includes(normalizedSearch)) {
+                shouldShow = true;
+                ingredientMatches++;
+                if (ingredientText === normalizedSearch) {
+                    score += 25;
+                } else if (ingredientText.startsWith(normalizedSearch)) {
+                    score += 15;
+                } else {
+                    score += 10;
+                }
+            }
+        });
+        
+        // Bonus por múltiples coincidencias en ingredientes
+        if (ingredientMatches > 1) {
+            score += ingredientMatches * 5;
+        }
+        
+        return {
+            element: item,
+            score: score,
+            shouldShow: shouldShow
+        };
+    });
+    
+    // Filtrar y ordenar por puntuación
+    const visibleItems = itemsWithScore.filter(item => item.shouldShow);
+    visibleItems.sort((a, b) => b.score - a.score);
+    
+    // Ocultar todos los items primero
+    items.forEach(item => {
+        item.style.display = 'none';
+        item.style.order = '0';
+    });
+    
+    // Mostrar y ordenar los items que coinciden
+    visibleItems.forEach((item, index) => {
+        item.element.style.display = 'block';
+        item.element.style.order = index.toString();
+    });
+    
+    // Mostrar mensaje si no hay resultados
+    showNoResultsMessage(visibleItems.length, normalizedSearch);
+}
+
+// Función para mostrar mensaje cuando no hay resultados
+function showNoResultsMessage(visibleCount, searchTerm) {
+    const itemsGrid = document.getElementById('crafts-items-grid');
+    if (!itemsGrid) return;
+    
+    // Remover mensaje anterior si existe
+    const existingMessage = itemsGrid.querySelector('.no-results-message');
+    if (existingMessage) {
+        existingMessage.remove();
+    }
+    
+    // Si no hay items visibles y hay un término de búsqueda, mostrar mensaje
+    if (visibleCount === 0 && searchTerm !== '') {
+        const currentLang = getCookie('language') || 'es';
+        const noResultsText = currentLang === 'es' 
+            ? `No se encontraron crafteos que coincidan con "${searchTerm}"` 
+            : `No crafts found matching "${searchTerm}"`;
+            
+        const messageDiv = document.createElement('div');
+        messageDiv.className = 'no-results-message';
+        messageDiv.style.cssText = `
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 2rem;
+            color: var(--dark-text-secondary);
+            font-style: italic;
+        `;
+        messageDiv.textContent = noResultsText;
+        itemsGrid.appendChild(messageDiv);
+    }
+}
+
+// Inicializar búsqueda de crafteos cuando se carga el contenido
+function initializeCraftsSearch() {
+    console.log('Inicializando búsqueda de crafteos...');
+    const searchInput = document.getElementById('crafts-search');
+    const searchBtn = document.getElementById('crafts-search-btn');
+    
+    console.log('Input encontrado:', searchInput);
+    console.log('Botón encontrado:', searchBtn);
+    
+    if (searchInput) {
+        // Limpiar eventos anteriores
+        searchInput.removeEventListener('input', handleSearchInput);
+        searchInput.removeEventListener('keypress', handleSearchKeypress);
+        
+        // Agregar nuevos eventos
+        searchInput.addEventListener('input', handleSearchInput);
+        searchInput.addEventListener('keypress', handleSearchKeypress);
+        
+        console.log('Eventos agregados al input');
+    }
+    
+    if (searchBtn) {
+        // Limpiar eventos anteriores
+        searchBtn.removeEventListener('click', handleSearchClick);
+        
+        // Agregar nuevo evento
+        searchBtn.addEventListener('click', handleSearchClick);
+        
+        console.log('Evento agregado al botón');
+    }
+}
+
+// Funciones de manejo de eventos separadas para evitar duplicados
+function handleSearchInput(e) {
+    console.log('Buscando:', e.target.value);
+    filterCrafts(e.target.value);
+}
+
+function handleSearchKeypress(e) {
+    if (e.key === 'Enter') {
+        console.log('Enter presionado, buscando:', e.target.value);
+        filterCrafts(e.target.value);
+    }
+}
+
+function handleSearchClick() {
+    const searchInput = document.getElementById('crafts-search');
+    const searchTerm = searchInput ? searchInput.value : '';
+    console.log('Botón clickeado, buscando:', searchTerm);
+    filterCrafts(searchTerm);
+}
+
+// Observador para detectar cuando se carga el contenido de crafteos
+const craftsObserver = new MutationObserver(function(mutations) {
+    console.log('MutationObserver detectó cambios');
+    
+    // Buscar directamente el campo de búsqueda
+    const searchInput = document.getElementById('crafts-search');
+    if (searchInput && !searchInput.hasAttribute('data-initialized')) {
+        console.log('Campo de búsqueda encontrado por MutationObserver, inicializando...');
+        searchInput.setAttribute('data-initialized', 'true');
+        initializeCraftsSearch();
+    }
+});
+
+// Iniciar el observador en el contenedor principal
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM cargado, iniciando observador');
+    const modContent = document.getElementById('mod-content');
+    if (modContent) {
+        craftsObserver.observe(modContent, {
+            childList: true,
+            subtree: true
+        });
+        console.log('Observador iniciado en mod-content');
+    }
+    
+    // También intentar inicializar inmediatamente si ya existe
+    setTimeout(() => {
+        const searchInput = document.getElementById('crafts-search');
+        if (searchInput && !searchInput.hasAttribute('data-initialized')) {
+            console.log('Campo encontrado en DOM inicial, inicializando...');
+            searchInput.setAttribute('data-initialized', 'true');
+            initializeCraftsSearch();
+        }
+    }, 500);
 });
