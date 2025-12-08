@@ -273,12 +273,14 @@ Update created by **AgustínBenitez** — 10/10/2025`,
                     },
                     recipe: {
                         pattern: [
-                            "IRI",
-                            "RCR",
+                            "IBI",
+                            "TCT",
                             "IRI"
                         ],
                         key: {
                             I: "iron_ingot",
+                            B: "iron_block",
+                            T: "repeater",
                             R: "redstone",
                             C: "chest"
                         },

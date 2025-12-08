@@ -2,23 +2,23 @@
 // Función para procesar formato básico de Markdown
 function processMarkdown(text) {
     if (!text) return text;
-    
+
     // Convertir **texto** a <strong>texto</strong>
     text = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-    
+
     // Convertir saltos de línea \n\n a párrafos
     text = text.replace(/\n\n/g, '</p><p>');
-    
+
     // Si el texto no empieza con <p>, agregarlo
     if (!text.startsWith('<p>')) {
         text = '<p>' + text;
     }
-    
+
     // Si el texto no termina con </p>, agregarlo
     if (!text.endsWith('</p>')) {
         text = text + '</p>';
     }
-    
+
     return text;
 }
 
@@ -36,7 +36,7 @@ function openLightbox(imageUrl) {
         console.warn('URL de imagen inválida:', imageUrl);
         return;
     }
-    
+
     // Crear un lightbox simple
     const lightbox = document.createElement('div');
     lightbox.className = 'lightbox';
@@ -51,7 +51,7 @@ function openLightbox(imageUrl) {
     lightbox.style.alignItems = 'center';
     lightbox.style.zIndex = '1000';
     lightbox.style.cursor = 'pointer';
-    
+
     // Crear la imagen
     const img = document.createElement('img');
     img.src = imageUrl;
@@ -59,25 +59,25 @@ function openLightbox(imageUrl) {
     img.style.maxHeight = '90%';
     img.style.objectFit = 'contain';
     img.style.borderRadius = '8px';
-    
+
     // Manejar errores de carga de imagen
-    img.onerror = function() {
+    img.onerror = function () {
         console.error('Error al cargar la imagen:', imageUrl);
         document.body.removeChild(lightbox);
     };
-    
+
     lightbox.appendChild(img);
     document.body.appendChild(lightbox);
-    
+
     // Cerrar al hacer clic
-    lightbox.addEventListener('click', function() {
+    lightbox.addEventListener('click', function () {
         if (document.body.contains(lightbox)) {
             document.body.removeChild(lightbox);
         }
     });
-    
+
     // Cerrar con tecla Escape
-    const closeOnEscape = function(e) {
+    const closeOnEscape = function (e) {
         if (e.key === 'Escape' && document.body.contains(lightbox)) {
             document.body.removeChild(lightbox);
             document.removeEventListener('keydown', closeOnEscape);
@@ -86,42 +86,42 @@ function openLightbox(imageUrl) {
     document.addEventListener('keydown', closeOnEscape);
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Obtener parámetros de la URL
     const urlParams = new URLSearchParams(window.location.search);
     const modId = urlParams.get('id');
     const gameType = urlParams.get('game');
     const activeTab = urlParams.get('tab') || 'general'; // Pestaña por defecto
-    
+
     // Verificar si tenemos los parámetros necesarios
     if (!modId || !gameType) {
         redirectToHome();
         return;
     }
-    
+
     // Buscar el mod en los datos
     const mod = modsData[gameType]?.find(m => m.id === modId);
-    
+
     // Si no se encuentra el mod, redirigir a la página principal
     if (!mod) {
         redirectToHome();
         return;
     }
-    
+
     // Configurar la navegación activa
     setActiveNavigation(gameType);
-    
+
     // Configurar el botón de volver
     setBackButton(gameType);
-    
+
     // Renderizar los detalles del mod
     window.renderModDetails(mod, activeTab);
-    
+
     // Configurar elementos después del renderizado
     setTimeout(() => {
         // Configurar la galería
         setupGallery();
-        
+
         // Si es Minecraft, configurar las pestañas
         if (gameType === 'minecraft') {
             setupMinecraftTabs(mod, modId, gameType);
@@ -140,7 +140,7 @@ function redirectToHome() {
 function setActiveNavigation(gameType) {
     const minecraftNav = document.getElementById('minecraft-nav');
     const sims4Nav = document.getElementById('sims4-nav');
-    
+
     if (gameType === 'minecraft' && minecraftNav) {
         minecraftNav.classList.add('active');
     } else if (gameType === 'sims4' && sims4Nav) {
@@ -157,15 +157,15 @@ function setBackButton(gameType) {
 }
 
 // Función para renderizar los detalles del mod (expuesta globalmente)
-window.renderModDetails = function(mod, activeTab = 'general') {
+window.renderModDetails = function (mod, activeTab = 'general') {
     const modContent = document.getElementById('mod-content');
     if (!modContent) return;
-    
+
     // Obtener el idioma actual
     function getCurrentLanguage() {
         return getCookie('language') || 'en';
     }
-    
+
     // Función para obtener cookie
     function getCookie(name) {
         const value = `; ${document.cookie}`;
@@ -173,22 +173,22 @@ window.renderModDetails = function(mod, activeTab = 'general') {
         if (parts.length === 2) return parts.pop().split(';').shift();
         return null;
     }
-    
+
     // Obtener el idioma actual
     const currentLang = getCurrentLanguage();
-    
+
     // Usar una imagen de placeholder si no hay imagen principal
     const mainImageUrl = mod.mainImage || `../img/${mod.game}/placeholder.svg`;
-    
+
     // Obtener textos según el idioma
     const descriptionTitle = currentLang === 'es' ? 'Descripción' : 'Description';
     const featuresTitle = currentLang === 'es' ? 'Características principales' : 'Main Features';
     const creationDateText = currentLang === 'es' ? 'Fecha de creación' : 'Creation Date';
-    
+
     // Obtener la descripción y características en el idioma actual o usar el primer idioma disponible
     const description = mod.description[currentLang] || mod.description[Object.keys(mod.description)[0]];
     const features = mod.features[currentLang] || mod.features[Object.keys(mod.features)[0]];
-    
+
     // Si es Minecraft, usar la nueva estructura con pestañas
     if (mod.game === 'minecraft') {
         renderMinecraftModDetails(mod, activeTab, currentLang);
@@ -201,13 +201,13 @@ window.renderModDetails = function(mod, activeTab = 'general') {
 // Función para renderizar mods de Minecraft con pestañas
 function renderMinecraftModDetails(mod, activeTab, currentLang) {
     const modContent = document.getElementById('mod-content');
-    
+
     // Usar una imagen de placeholder si no hay imagen principal
     const mainImageUrl = mod.mainImage || `../img/${mod.game}/placeholder.svg`;
-    
+
     // Crear botones de descarga
     const downloadButtons = createDownloadButtons(mod, currentLang);
-    
+
     // Crear el HTML para la cabecera del mod con pestañas
     let modHTML = `
         <div class="mod-header">
@@ -256,14 +256,14 @@ function renderMinecraftModDetails(mod, activeTab, currentLang) {
             </div>
         </div>
     `;
-    
+
     modContent.innerHTML = modHTML;
 }
 
 // Función para crear botones de descarga
 function createDownloadButtons(mod, currentLang) {
     let buttons = '';
-    
+
     if (mod.modrinthUrl) {
         buttons += `
             <a href="${mod.modrinthUrl}" class="download-button modrinth" target="_blank">
@@ -273,7 +273,7 @@ function createDownloadButtons(mod, currentLang) {
             </a>
         `;
     }
-    
+
     if (mod.curseForgeUrl) {
         buttons += `
             <a href="${mod.curseForgeUrl}" class="download-button curseforge" target="_blank">
@@ -283,7 +283,7 @@ function createDownloadButtons(mod, currentLang) {
             </a>
         `;
     }
-    
+
     if (mod.repositoryUrl) {
         const repositoryText = currentLang === 'es' ? 'Repositorio' : 'Repository';
         buttons += `
@@ -294,7 +294,7 @@ function createDownloadButtons(mod, currentLang) {
             </a>
         `;
     }
-    
+
     return buttons ? `<div class="download-buttons">${buttons}</div>` : '';
 }
 
@@ -302,7 +302,7 @@ function createDownloadButtons(mod, currentLang) {
 function getTabContent(mod, activeTab, currentLang) {
     const description = mod.description[currentLang] || mod.description[Object.keys(mod.description)[0]];
     const features = mod.features[currentLang] || mod.features[Object.keys(mod.features)[0]];
-    
+
     switch (activeTab) {
         case 'general':
             return `
@@ -318,19 +318,19 @@ function getTabContent(mod, activeTab, currentLang) {
                     </div>
                 </div>
             `;
-            
+
         case 'crafts':
             return getCraftsContent(mod, currentLang);
-            
+
         case 'tutorial':
             return getTutorialContent(mod, currentLang);
-            
+
         case 'gallery':
             return getGalleryContent(mod, currentLang);
-            
+
         case 'changelog':
             return getChangelogContent(mod, currentLang);
-            
+
         default:
             return getTabContent(mod, 'general', currentLang);
     }
@@ -345,13 +345,13 @@ function getCraftsContent(mod, currentLang) {
             </div>
         `;
     }
-    
+
     const itemsTitle = currentLang === 'es' ? 'Recetas de Crafteo' : 'Crafting Recipes';
     const recipeTitle = currentLang === 'es' ? 'Receta de Crafteo' : 'Crafting Recipe';
     const ingredientsTitle = currentLang === 'es' ? 'Ingredientes' : 'Ingredients';
     const resultTitle = currentLang === 'es' ? 'Resultado' : 'Result';
     const searchPlaceholder = currentLang === 'es' ? 'Buscar crafteos...' : 'Search crafts...';
-    
+
     // Función para normalizar nombres de ingredientes a nombres de archivos
     function normalizeIngredientName(name) {
         // Mapeo de nombres comunes en español a nombres de archivos en inglés
@@ -359,6 +359,7 @@ function getCraftsContent(mod, currentLang) {
             // Materiales básicos
             'lingote de hierro': 'iron_ingot',
             'lingote de oro': 'gold_ingot',
+            'bloque de hierro': 'iron_block',
             'redstone': 'redstone',
             'polvo de redstone': 'redstone',
             'diamante': 'diamond',
@@ -398,15 +399,17 @@ function getCraftsContent(mod, currentLang) {
             'cofre': 'chest',
             'chest': 'chest',
             'iron_ingot': 'iron_ingot',
-            'iron ingot': 'iron_ingot'
+            'iron ingot': 'iron_ingot',
+            'iron_block': 'iron_block',
+            'repeater': 'repeater'
         };
-        
+
         const lowerName = name.toLowerCase().trim();
-        
+
         if (nameMapping[lowerName]) {
             return nameMapping[lowerName];
         }
-        
+
         // Si no se encuentra en el mapeo, normalizar el nombre
         return lowerName
             .replace(/\s+/g, '_')        // Reemplazar espacios con guion bajo
@@ -415,7 +418,7 @@ function getCraftsContent(mod, currentLang) {
             .replace(/^_+/, '')           // Eliminar guiones bajos del inicio
             .replace(/_+$/, '');          // Eliminar guiones bajos del final
     }
-    
+
     let craftsHTML = `
         <div class="mod-items">
             <h3>${itemsTitle}</h3>
@@ -425,10 +428,10 @@ function getCraftsContent(mod, currentLang) {
             </div>
             <div class="items-grid" id="crafts-items-grid">
     `;
-    
+
     mod.items.forEach(item => {
         const itemDescription = item.description[currentLang] || item.description[Object.keys(item.description)[0]];
-        
+
         craftsHTML += `
             <div class="item-card">
                 <div class="item-header">
@@ -439,7 +442,7 @@ function getCraftsContent(mod, currentLang) {
                     </div>
                 </div>
         `;
-        
+
         if (item.recipe) {
             craftsHTML += `
                 <div class="item-recipe">
@@ -447,7 +450,7 @@ function getCraftsContent(mod, currentLang) {
                     <div class="recipe-container">
                         <div class="recipe-grid">
             `;
-            
+
             // Añadir el patrón de crafteo con imágenes
             if (item.recipe.pattern) {
                 item.recipe.pattern.forEach(row => {
@@ -458,13 +461,13 @@ function getCraftsContent(mod, currentLang) {
                             craftsHTML += '<div class="recipe-cell empty"></div>';
                         } else {
                             const ingredient = item.recipe.key[cell];
-                            
+
                             // Obtener el nombre normalizado del ingrediente para la imagen
                             const ingredientImageName = normalizeIngredientName(ingredient);
-                            
+
                             // Lista de ítems que están en la carpeta block
-                            const blockItems = ['redstone_torch', 'torch', 'repeater', 'comparator', 'hopper', 'chest', 'furnace', 'dispenser', 'dropper', 'observer', 'piston', 'sticky_piston', 'lever', 'button', 'pressure_plate', 'daylight_detector', 'tripwire_hook', 'trapped_chest', 'bell', 'lantern', 'soul_lantern', 'campfire', 'soul_campfire', 'candle', 'chain'];
-                            
+                            const blockItems = ['redstone_torch', 'torch', 'repeater', 'comparator', 'hopper', 'chest', 'furnace', 'dispenser', 'dropper', 'observer', 'piston', 'sticky_piston', 'lever', 'button', 'pressure_plate', 'daylight_detector', 'tripwire_hook', 'trapped_chest', 'bell', 'lantern', 'soul_lantern', 'campfire', 'soul_campfire', 'candle', 'chain', 'iron_block'];
+
                             // Comprobar si el ítem está en la carpeta block
                             let ingredientImagePath;
                             if (blockItems.includes(ingredientImageName)) {
@@ -472,7 +475,7 @@ function getCraftsContent(mod, currentLang) {
                             } else {
                                 ingredientImagePath = `../img/minecraft/item/${ingredientImageName}.png`;
                             }
-                            
+
                             // Usar la imagen del ingrediente en lugar de la letra
                             craftsHTML += `<div class="recipe-cell" title="${ingredient}">
                                 <div class="ingredient-image" style="background-image: url('${ingredientImagePath}'), url('../img/placeholder.svg');"></div>
@@ -482,7 +485,7 @@ function getCraftsContent(mod, currentLang) {
                     craftsHTML += '</div>';
                 });
             }
-            
+
             craftsHTML += `
                         </div>
                         <div class="recipe-arrow">
@@ -499,14 +502,14 @@ function getCraftsContent(mod, currentLang) {
                         <h6>${ingredientsTitle}:</h6>
                         <ul>
             `;
-            
+
             // Añadir la leyenda de ingredientes
             if (item.recipe.key) {
                 for (const [key, value] of Object.entries(item.recipe.key)) {
                     craftsHTML += `<li><strong>${key}:</strong> ${value}</li>`;
                 }
             }
-            
+
             craftsHTML += `
                         </ul>
                         <h6>${resultTitle}:</h6>
@@ -515,20 +518,31 @@ function getCraftsContent(mod, currentLang) {
                 </div>
             `;
         }
-        
+
         craftsHTML += `</div>`;
     });
-    
+
     craftsHTML += `
             </div>
         </div>
     `;
-    
+
     return craftsHTML;
 }
 
 // Función para obtener contenido del tutorial
 function getTutorialContent(mod, currentLang) {
+    if (mod.id === 'indexer') {
+        return `
+            <div class="tutorial-content">
+                <h3>${currentLang === 'es' ? 'Tutorial' : 'Tutorial'}</h3>
+                <div class="video-container" style="display: flex; justify-content: center; margin-top: 20px;">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/rm9Hx_9Qvbw?si=zPIWhmusPc1PIznY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        `;
+    }
+
     return `
         <div class="tutorial-content">
             <h3>${currentLang === 'es' ? 'Tutorial' : 'Tutorial'}</h3>
@@ -546,16 +560,16 @@ function getGalleryContent(mod, currentLang) {
             </div>
         `;
     }
-    
+
     // Filtrar imágenes válidas
-    const validImages = mod.gallery.filter(imageUrl => 
-        imageUrl && 
-        imageUrl !== 'null' && 
-        imageUrl !== 'undefined' && 
+    const validImages = mod.gallery.filter(imageUrl =>
+        imageUrl &&
+        imageUrl !== 'null' &&
+        imageUrl !== 'undefined' &&
         imageUrl.trim() !== '' &&
         !imageUrl.includes('placeholder.svg')
     );
-    
+
     if (validImages.length === 0) {
         return `
             <div class="no-content">
@@ -563,18 +577,18 @@ function getGalleryContent(mod, currentLang) {
             </div>
         `;
     }
-    
+
     const galleryTitle = currentLang === 'es' ? 'Galería' : 'Gallery';
-    
+
     return `
         <div class="mod-gallery">
             <h3>${galleryTitle}</h3>
             <div class="gallery-grid">
-                ${validImages.map((imageUrl, index) => 
-                    `<div class="gallery-item" data-img="${imageUrl}">
+                ${validImages.map((imageUrl, index) =>
+        `<div class="gallery-item" data-img="${imageUrl}">
                         <img src="${imageUrl}" alt="${mod.name} - Imagen ${index + 1}" class="gallery-image" loading="lazy">
                     </div>`
-                ).join('')}
+    ).join('')}
             </div>
         </div>
     `;
@@ -600,37 +614,37 @@ function getChangelogContent(mod, currentLang) {
             .replace(/^#### (.*$)/gim, '<h4>$1</h4>')
             .replace(/^##### (.*$)/gim, '<h5>$1</h5>')
             .replace(/^###### (.*$)/gim, '<h6>$1</h6>')
-            
+
             // Images (debe ir antes que los links)
             .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" class="changelog-image" loading="lazy">')
-            
+
             // Bold
             .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-            
+
             // Italic
             .replace(/\*(.*?)\*/g, '<em>$1</em>')
-            
+
             // Code inline
             .replace(/`(.*?)`/g, '<code>$1</code>')
-            
+
             // Links
             .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank">$1</a>')
-            
+
             // Horizontal rules
             .replace(/^---$/gim, '<hr>')
-            
+
             // Line breaks
             .replace(/\n\n/g, '</p><p>')
             .replace(/\n/g, '<br>')
-            
+
             // Lists
             .replace(/^\* (.*$)/gim, '<li>$1</li>')
             .replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>')
-            
+
             // Wrap in paragraphs
             .replace(/^(?!<[hul]|<hr|<\/)/gm, '<p>')
             .replace(/(?<!>)$/gm, '</p>')
-            
+
             // Clean up extra paragraph tags
             .replace(/<p><\/p>/g, '')
             .replace(/<p>(<[hul])/g, '$1')
@@ -650,7 +664,7 @@ function getChangelogContent(mod, currentLang) {
 function setupChangelogImages() {
     const changelogImages = document.querySelectorAll('.changelog-image');
     changelogImages.forEach(img => {
-        img.addEventListener('click', function() {
+        img.addEventListener('click', function () {
             openLightbox(this.src);
         });
     });
@@ -659,25 +673,25 @@ function setupChangelogImages() {
 // Función para configurar las pestañas de Minecraft
 function setupMinecraftTabs(mod, modId, gameType) {
     const tabButtons = document.querySelectorAll('.tab-button');
-    
+
     tabButtons.forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
             const tab = this.getAttribute('data-tab');
-            
+
             // Actualizar URL
             const url = new URL(window.location);
             url.searchParams.set('tab', tab);
             window.history.pushState({}, '', url);
-            
+
             // Actualizar pestañas activas
             tabButtons.forEach(btn => btn.classList.remove('active'));
             this.classList.add('active');
-            
+
             // Actualizar contenido
             const currentLang = getCookie('language') || 'en';
             const tabContent = document.getElementById('tab-content');
             tabContent.innerHTML = getTabContent(mod, tab, currentLang);
-            
+
             // Configurar elementos interactivos según la pestaña
             setTimeout(() => {
                 if (tab === 'gallery') {
@@ -697,15 +711,15 @@ function initializeTabContent(tab) {
     tooltips.forEach(tooltip => {
         // Configurar tooltips si es necesario
     });
-    
+
     // Configurar enlaces externos
     const externalLinks = document.querySelectorAll('a[target="_blank"]');
     externalLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
+        link.addEventListener('click', function (e) {
             // Asegurar que los enlaces externos funcionen correctamente
         });
     });
-    
+
     // Configurar imágenes lazy loading si existen
     const images = document.querySelectorAll('img[data-src]');
     images.forEach(img => {
@@ -714,12 +728,12 @@ function initializeTabContent(tab) {
             img.removeAttribute('data-src');
         }
     });
-    
+
     // Configurar imágenes del changelog si estamos en esa pestaña
     if (tab === 'changelog') {
         setupChangelogImages();
     }
-    
+
     // Inicializar búsqueda de crafteos si estamos en esa pestaña
     if (tab === 'crafts') {
         console.log('Inicializando filtro de crafteos desde initializeTabContent');
@@ -732,19 +746,19 @@ function initializeTabContent(tab) {
 // Función para renderizar mods originales (Sims4)
 function renderOriginalModDetails(mod, currentLang) {
     const modContent = document.getElementById('mod-content');
-    
+
     // Usar una imagen de placeholder si no hay imagen principal
     const mainImageUrl = mod.mainImage || `../img/${mod.game}/placeholder.svg`;
-    
+
     // Obtener textos según el idioma
     const descriptionTitle = currentLang === 'es' ? 'Descripción' : 'Description';
     const featuresTitle = currentLang === 'es' ? 'Características principales' : 'Main Features';
     const creationDateText = currentLang === 'es' ? 'Fecha de creación' : 'Creation Date';
-    
+
     // Obtener la descripción y características en el idioma actual o usar el primer idioma disponible
     const description = mod.description[currentLang] || mod.description[Object.keys(mod.description)[0]];
     const features = mod.features[currentLang] || mod.features[Object.keys(mod.features)[0]];
-    
+
     let modHTML = `
         <div class="mod-header">
             <div class="mod-header-image" style="background-image: url('${mainImageUrl}');"></div>
@@ -772,12 +786,12 @@ function renderOriginalModDetails(mod, currentLang) {
                 </div>
             </div>
     `;
-    
+
     // Añadir galería si hay imágenes
     if (mod.gallery && mod.gallery.length > 0) {
         // Texto de la galería según el idioma
         const galleryTitle = currentLang === 'es' ? 'Galería' : 'Gallery';
-        
+
         modHTML += `
             <div class="mod-gallery">
                 <h3>${galleryTitle}</h3>
@@ -789,7 +803,7 @@ function renderOriginalModDetails(mod, currentLang) {
             </div>
         `;
     }
-    
+
     // Añadir sección de ítems y recetas si existen
     if (mod.items && mod.items.length > 0) {
         // Textos según el idioma
@@ -797,18 +811,18 @@ function renderOriginalModDetails(mod, currentLang) {
         const recipeTitle = currentLang === 'es' ? 'Receta de Crafteo' : 'Crafting Recipe';
         const ingredientsTitle = currentLang === 'es' ? 'Ingredientes' : 'Ingredients';
         const resultTitle = currentLang === 'es' ? 'Resultado' : 'Result';
-        
+
         modHTML += `
             <div class="mod-items">
                 <h3>${itemsTitle}</h3>
                 <div class="items-grid">
         `;
-        
+
         // Añadir cada ítem con su receta
         mod.items.forEach(item => {
             // Obtener la descripción en el idioma actual o usar el primer idioma disponible
             const itemDescription = item.description[currentLang] || item.description[Object.keys(item.description)[0]];
-            
+
             modHTML += `
                 <div class="item-card">
                     <div class="item-header">
@@ -823,7 +837,7 @@ function renderOriginalModDetails(mod, currentLang) {
                         <div class="recipe-container">
                             <div class="recipe-grid">
             `;
-            
+
             // Añadir el patrón de crafteo
             if (item.recipe && item.recipe.pattern) {
                 item.recipe.pattern.forEach(row => {
@@ -834,7 +848,7 @@ function renderOriginalModDetails(mod, currentLang) {
                             modHTML += '<div class="recipe-cell empty"></div>';
                         } else {
                             const ingredient = item.recipe.key[cell];
-                            
+
                             // Función para normalizar nombres de ingredientes a nombres de archivos
                             function normalizeIngredientName(name) {
                                 // Mapeo de nombres comunes en español a nombres de archivos en inglés
@@ -878,7 +892,7 @@ function renderOriginalModDetails(mod, currentLang) {
                                     'antorcha de piedra luminosa': 'glowstone',
                                     'piedra luminosa': 'glowstone',
                                     'polvo de piedra luminosa': 'glowstone_dust',
-                                    
+
                                     // Tintes
                                     'tinte rojo': 'red_dye',
                                     'tinte azul': 'blue_dye',
@@ -896,7 +910,7 @@ function renderOriginalModDetails(mod, currentLang) {
                                     'tinte morado': 'purple_dye',
                                     'tinte marrón': 'brown_dye',
                                     'tinte cualquier color': 'red_dye', // Placeholder genérico
-                                    
+
                                     // Componentes de redstone
                                     'repetidor': 'repeater',
                                     'comparador': 'comparator',
@@ -908,7 +922,7 @@ function renderOriginalModDetails(mod, currentLang) {
                                     'observador': 'observer',
                                     'bloque de redstone': 'redstone_block',
                                     'bloque de hierro': 'block/iron_block',
-                                    
+
                                     // Otros
                                     'pipe': 'indexer_pipeitem',
                                     'cofre': 'chest',
@@ -1419,15 +1433,15 @@ function renderOriginalModDetails(mod, currentLang) {
                                     'bloque negro y morado': 'missing_texture',
                                     'bloque negro y rosa': 'missing_texture'
                                 };
-                                
+
                                 // Convertir a minúsculas para la búsqueda
                                 const lowerName = name.toLowerCase();
-                                
+
                                 // Buscar en el mapeo
                                 if (nameMapping[lowerName]) {
                                     return nameMapping[lowerName];
                                 }
-                                
+
                                 // Si no se encuentra en el mapeo, normalizar el nombre
                                 return lowerName
                                     .replace(/\s+/g, '_')        // Reemplazar espacios con guion bajo
@@ -1436,13 +1450,13 @@ function renderOriginalModDetails(mod, currentLang) {
                                     .replace(/^_+/, '')           // Eliminar guiones bajos del inicio
                                     .replace(/_+$/, '');          // Eliminar guiones bajos del final
                             }
-                            
+
                             // Obtener el nombre normalizado del ingrediente para la imagen
                             const ingredientImageName = normalizeIngredientName(ingredient);
-                            
+
                             // Lista de ítems que están en la carpeta block
                             const blockItems = ['redstone_torch', 'torch', 'repeater', 'comparator', 'hopper', 'chest', 'furnace', 'dispenser', 'dropper', 'observer', 'piston', 'sticky_piston', 'lever', 'button', 'pressure_plate', 'daylight_detector', 'tripwire_hook', 'trapped_chest', 'bell', 'lantern', 'soul_lantern', 'campfire', 'soul_campfire', 'candle', 'chain'];
-                            
+
                             // Comprobar si el ítem está en la carpeta block
                             let ingredientImagePath;
                             if (blockItems.includes(ingredientImageName)) {
@@ -1450,7 +1464,7 @@ function renderOriginalModDetails(mod, currentLang) {
                             } else {
                                 ingredientImagePath = `../img/minecraft/item/${ingredientImageName}.png`;
                             }
-                            
+
                             // Usar la imagen del ingrediente en lugar de la letra
                             modHTML += `<div class="recipe-cell" title="${ingredient}">
                                 <div class="ingredient-image" style="background-image: url('${ingredientImagePath}'), url('../img/placeholder.svg');"></div>
@@ -1460,7 +1474,7 @@ function renderOriginalModDetails(mod, currentLang) {
                     modHTML += '</div>';
                 });
             }
-            
+
             modHTML += `
                             </div>
                             <div class="recipe-arrow">
@@ -1477,14 +1491,14 @@ function renderOriginalModDetails(mod, currentLang) {
                             <h6>${ingredientsTitle}:</h6>
                             <ul>
             `;
-            
+
             // Añadir la leyenda de ingredientes
             if (item.recipe && item.recipe.key) {
                 for (const [key, value] of Object.entries(item.recipe.key)) {
                     modHTML += `<li><strong>${key}:</strong> ${value}</li>`;
                 }
             }
-            
+
             modHTML += `
                             </ul>
                             <h6>${resultTitle}:</h6>
@@ -1494,21 +1508,21 @@ function renderOriginalModDetails(mod, currentLang) {
                 </div>
             `;
         });
-        
+
         modHTML += `
                 </div>
             </div>
         `;
     }
-    
+
     // Añadir sección de descarga
     // Texto del botón según el idioma
     const downloadText = currentLang === 'es' ? 'Descargar desde CurseForge' : 'Download from CurseForge';
     const downloadTitle = currentLang === 'es' ? `Descargar ${mod.name}` : `Download ${mod.name}`;
-    const versionsText = currentLang === 'es' ? 
-        `Versiones disponibles para ${mod.game === 'minecraft' ? 'Minecraft' : 'Sims 4'}:` : 
+    const versionsText = currentLang === 'es' ?
+        `Versiones disponibles para ${mod.game === 'minecraft' ? 'Minecraft' : 'Sims 4'}:` :
         `Available versions for ${mod.game === 'minecraft' ? 'Minecraft' : 'Sims 4'}:`;
-    
+
     modHTML += `
             <div class="mod-download">
                 <div class="mod-download-info">
@@ -1524,7 +1538,7 @@ function renderOriginalModDetails(mod, currentLang) {
             </div>
         </div>
     `;
-    
+
     // Insertar el HTML en el contenedor
     modContent.innerHTML = modHTML;
 }
@@ -1533,24 +1547,24 @@ function renderOriginalModDetails(mod, currentLang) {
 function setupGallery() {
     // Configurar lightbox para la galería
     const galleryItems = document.querySelectorAll('.gallery-item');
-    
+
     galleryItems.forEach(item => {
-        item.addEventListener('click', function() {
+        item.addEventListener('click', function () {
             const imgUrl = this.getAttribute('data-img');
             openLightbox(imgUrl);
         });
-        
+
         // Añadir cursor pointer para indicar que es clickeable
         item.style.cursor = 'pointer';
     });
 }
 
 // Escuchar cambios de idioma para actualizar los detalles del mod
-window.addEventListener('languageChanged', function(event) {
+window.addEventListener('languageChanged', function (event) {
     const urlParams = new URLSearchParams(window.location.search);
     const modId = urlParams.get('id');
     const gameType = urlParams.get('game');
-    
+
     if (modId && gameType && window.modsData && window.modsData[gameType]) {
         const mod = window.modsData[gameType].find(m => m.id === modId);
         if (mod && window.renderModDetails) {
@@ -1564,18 +1578,18 @@ window.addEventListener('languageChanged', function(event) {
 // Función para filtrar crafteos por nombre
 function filterCrafts(searchTerm) {
     console.log('filterCrafts llamada con término:', searchTerm);
-    
+
     const itemsGrid = document.getElementById('crafts-items-grid');
     console.log('Items grid encontrado:', itemsGrid);
-    
+
     if (!itemsGrid) return;
-    
+
     const items = Array.from(itemsGrid.querySelectorAll('.item-card'));
     console.log('Items encontrados:', items.length);
-    
+
     const normalizedSearch = searchTerm.toLowerCase().trim();
     console.log('Término normalizado:', normalizedSearch);
-    
+
     if (normalizedSearch === '') {
         // Si no hay término de búsqueda, mostrar todos en orden original
         items.forEach(item => {
@@ -1585,12 +1599,12 @@ function filterCrafts(searchTerm) {
         showNoResultsMessage(items.length, normalizedSearch);
         return;
     }
-    
+
     // Calcular puntuación de relevancia para cada item
     const itemsWithScore = items.map(item => {
         let score = 0;
         let shouldShow = false;
-        
+
         // Buscar en el nombre del item (mayor peso) - usar h4 dentro de .item-info
         const itemNameElement = item.querySelector('.item-info h4');
         if (itemNameElement) {
@@ -1607,13 +1621,13 @@ function filterCrafts(searchTerm) {
                 } else {
                     score += 40;
                 }
-                
+
                 // Bonus por longitud de coincidencia
                 const matchLength = normalizedSearch.length / name.length;
                 score += matchLength * 20;
             }
         }
-        
+
         // Buscar en la descripción (peso medio) - usar p dentro de .item-info
         const itemDescriptionElement = item.querySelector('.item-info p');
         if (itemDescriptionElement) {
@@ -1627,7 +1641,7 @@ function filterCrafts(searchTerm) {
                 }
             }
         }
-        
+
         // Buscar en los ingredientes de la receta (menor peso)
         const ingredients = item.querySelectorAll('.recipe-key ul li');
         let ingredientMatches = 0;
@@ -1645,35 +1659,35 @@ function filterCrafts(searchTerm) {
                 }
             }
         });
-        
+
         // Bonus por múltiples coincidencias en ingredientes
         if (ingredientMatches > 1) {
             score += ingredientMatches * 5;
         }
-        
+
         return {
             element: item,
             score: score,
             shouldShow: shouldShow
         };
     });
-    
+
     // Filtrar y ordenar por puntuación
     const visibleItems = itemsWithScore.filter(item => item.shouldShow);
     visibleItems.sort((a, b) => b.score - a.score);
-    
+
     // Ocultar todos los items primero
     items.forEach(item => {
         item.style.display = 'none';
         item.style.order = '0';
     });
-    
+
     // Mostrar y ordenar los items que coinciden
     visibleItems.forEach((item, index) => {
         item.element.style.display = 'block';
         item.element.style.order = index.toString();
     });
-    
+
     // Mostrar mensaje si no hay resultados
     showNoResultsMessage(visibleItems.length, normalizedSearch);
 }
@@ -1682,20 +1696,20 @@ function filterCrafts(searchTerm) {
 function showNoResultsMessage(visibleCount, searchTerm) {
     const itemsGrid = document.getElementById('crafts-items-grid');
     if (!itemsGrid) return;
-    
+
     // Remover mensaje anterior si existe
     const existingMessage = itemsGrid.querySelector('.no-results-message');
     if (existingMessage) {
         existingMessage.remove();
     }
-    
+
     // Si no hay items visibles y hay un término de búsqueda, mostrar mensaje
     if (visibleCount === 0 && searchTerm !== '') {
         const currentLang = getCookie('language') || 'es';
-        const noResultsText = currentLang === 'es' 
-            ? `No se encontraron crafteos que coincidan con "${searchTerm}"` 
+        const noResultsText = currentLang === 'es'
+            ? `No se encontraron crafteos que coincidan con "${searchTerm}"`
             : `No crafts found matching "${searchTerm}"`;
-            
+
         const messageDiv = document.createElement('div');
         messageDiv.className = 'no-results-message';
         messageDiv.style.cssText = `
@@ -1715,29 +1729,29 @@ function initializeCraftsSearch() {
     console.log('Inicializando búsqueda de crafteos...');
     const searchInput = document.getElementById('crafts-search');
     const searchBtn = document.getElementById('crafts-search-btn');
-    
+
     console.log('Input encontrado:', searchInput);
     console.log('Botón encontrado:', searchBtn);
-    
+
     if (searchInput) {
         // Limpiar eventos anteriores
         searchInput.removeEventListener('input', handleSearchInput);
         searchInput.removeEventListener('keypress', handleSearchKeypress);
-        
+
         // Agregar nuevos eventos
         searchInput.addEventListener('input', handleSearchInput);
         searchInput.addEventListener('keypress', handleSearchKeypress);
-        
+
         console.log('Eventos agregados al input');
     }
-    
+
     if (searchBtn) {
         // Limpiar eventos anteriores
         searchBtn.removeEventListener('click', handleSearchClick);
-        
+
         // Agregar nuevo evento
         searchBtn.addEventListener('click', handleSearchClick);
-        
+
         console.log('Evento agregado al botón');
     }
 }
@@ -1763,9 +1777,9 @@ function handleSearchClick() {
 }
 
 // Observador para detectar cuando se carga el contenido de crafteos
-const craftsObserver = new MutationObserver(function(mutations) {
+const craftsObserver = new MutationObserver(function (mutations) {
     console.log('MutationObserver detectó cambios');
-    
+
     // Buscar directamente el campo de búsqueda
     const searchInput = document.getElementById('crafts-search');
     if (searchInput && !searchInput.hasAttribute('data-initialized')) {
@@ -1776,7 +1790,7 @@ const craftsObserver = new MutationObserver(function(mutations) {
 });
 
 // Iniciar el observador en el contenedor principal
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     console.log('DOM cargado, iniciando observador');
     const modContent = document.getElementById('mod-content');
     if (modContent) {
@@ -1786,7 +1800,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         console.log('Observador iniciado en mod-content');
     }
-    
+
     // También intentar inicializar inmediatamente si ya existe
     setTimeout(() => {
         const searchInput = document.getElementById('crafts-search');
